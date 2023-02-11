@@ -12,7 +12,9 @@
       "author": "",
       "license": "MIT",
 
-      "devDependencies": {
-        "concurrently": "^5.1.0"
+    "devDependencies": {
+    "concurrently": "^5.1.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^11.1.0"
       }
 }
