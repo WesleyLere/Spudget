@@ -1,11 +1,11 @@
 import React from 'react';
 
-const signup = () => {
+const receiptimport = () => {
     return (
         <section className="">
-            
+
         </section>
     )
 }
 
-export default signup; 
+export default receiptimport; 
