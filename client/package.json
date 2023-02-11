@@ -20,20 +20,20 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
-      },
-      "eslintConfig": {
+    },
+    "eslintConfig": {
         "extends": "react-app"
-      },
-      "browserslist": {
+    },
+    "browserslist": {
         "production": [
-          ">0.2%",
-          "not dead",
-          "not op_mini all"
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
         ],
         "development": [
-          "last 1 chrome version",
-          "last 1 firefox version",
-          "last 1 safari version"
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
         ]
-      }
+    }
 }
