@@ -1,6 +1,6 @@
 import React from 'react';
 
-const signup = () => {
+const MoneyDash =() => {
     return (
         <section className="">
 
@@ -8,4 +8,6 @@ const signup = () => {
     )
 }
 
-export default signup; 
+
+
+export default MoneyDash;
