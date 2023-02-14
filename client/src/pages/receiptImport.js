@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MoneyDash =() => {
+const receiptimport = () => {
     return (
         <section className="">
 
@@ -8,6 +8,4 @@ const MoneyDash =() => {
     )
 }
 
- 
-
-export default MoneyDash;
+export default receiptimport; 
