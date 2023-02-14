@@ -1,6 +1,6 @@
 import React from 'react';
 
-const receiptimport = () => {
+const ReceiptImport = () => {
     return (
         <section className="">
 
@@ -8,4 +8,4 @@ const receiptimport = () => {
     )
 }
 
-export default receiptimport; 
+export default ReceiptImport; 

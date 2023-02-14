@@ -1,6 +1,6 @@
 import React from 'react';
 
-const signup = () => {
+const SignUp = () => {
     return (
         <section className="">
             <div className=''>
@@ -16,4 +16,4 @@ const signup = () => {
     )
 }
 
-export default signup; 
+export default SignUp; 
