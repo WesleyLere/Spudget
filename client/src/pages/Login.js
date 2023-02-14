@@ -1,15 +1,16 @@
 import React from 'react';
-import SignupForm from '../componets/SignupForm';
+import LoginForm from '../componets/LoginForm/index';
 
-const SignUp = () => {
+const Login = () => {
     return (
         <section className="">
             <div className=''>
                 <img className=''></img>
             </div>
             <div className=''>
+                <LoginForm/>
                 <form className=''>
-                <SignupForm/>
+                
                 </form>
             </div>
 
@@ -17,4 +18,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp; 
+export default Login; 
