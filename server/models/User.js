@@ -21,7 +21,13 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-        transactions: [Transaction.Schema]
+        transactions: [Transaction.Schema],
+        limits: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Limit'
+            },
+        ],
     },
 );
 
