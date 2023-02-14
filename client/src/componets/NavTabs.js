@@ -19,11 +19,33 @@ function NavTabs({currentPage, handlePageChange}) {
 
             <li className=''>
                 <a href='#signup'
-                onClick={() => handlePageChange('signup')}
+                onClick={() => handlePageChange('Signup')}
                 className={currentPage === 'signup' ? 'nav-link active' : 'nav-link'}
                 >
                     <button className=''>
                         Sign Up
+                    </button>
+
+                </a>
+            </li>
+            <li className=''>
+                <a href='#cta'
+                onClick={() => handlePageChange('Cta')}
+                className={currentPage === 'cta' ? 'nav-link active' : 'nav-link'}
+                >
+                    <button className=''>
+                        Cta
+                    </button>
+
+                </a>
+            </li>
+            <li className=''>
+                <a href='#moneydash'
+                onClick={() => handlePageChange('Moneydash')}
+                className={currentPage === 'moneydash' ? 'nav-link active' : 'nav-link'}
+                >
+                    <button className=''>
+                        Money Dashboard
                     </button>
 
                 </a>
