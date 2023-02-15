@@ -3,9 +3,8 @@ import React from 'react';
 // prior to logging in nav bar would show log in and sign up buttons
 //after logging in nav bar would show "dashboard" "import" and "sign out" 
 // not sure how implement that in react. 
-function NavTabs({tab, handlePageChange}) {
-    return (
-
+function NavTabs({ tab, handlePageChange }) {
+  return (
     <div className="bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl m-10 text-xl font-semibold">
 
       <div className='flex flex-row justify-start'>
@@ -58,21 +57,22 @@ function NavTabs({tab, handlePageChange}) {
 
           </a>
         </li>
-        <li className=''>
-            <a href='#newTransactions'
+
+        <li className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg m-5 p-5 nav-item'>
+          <a href='#newTransactions'
             onClick={() => handlePageChange('New Transactions')}
             className={tab === 'New Transactions' ? 'nav-link active' : 'nav-link'}
-            >
-                <button className=''>
-                    New Transactions
-                </button>
+          >
+            <button className=''>
+              New Transactions
+            </button>
 
-            </a>
+          </a>
         </li>
       </nav>
 
     </div>
-    )
+  )
 }
 
 export default NavTabs;

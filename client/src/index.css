@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.test {
+    width: 50%;
+    background-color: bisque;
+}
