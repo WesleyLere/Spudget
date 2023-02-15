@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Transaction = require('./Transaction')
 
 const userSchema = new Schema(
     {
@@ -20,12 +21,14 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
+        transactions: [Transaction.Schema],
+        limits: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Limit'
+            },
+        ],
     },
-    {
-        toJSON: {
-            virtuals: true
-        }
-    }
 );
 
 userSchema.pre('save', async function(next) {
