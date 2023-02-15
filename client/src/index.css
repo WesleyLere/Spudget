@@ -1,8 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
 
 .test {
     width: 50%;
     background-color: bisque;
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
 }
