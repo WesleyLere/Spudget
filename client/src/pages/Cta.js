@@ -6,28 +6,28 @@ const Cta = () => {
 
             <div className='xl:p-20 sm:p-5 xl:bg-gradient-to-t from-lime-600 to-lime-500 xl:flex xl:flex-row xl:items-center xl:justify-center'>
 
-                <div class="xl:bg-slate-300 sm:bg-slate-600 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                <div class="xl:bg-slate-300 sm:bg-slate-600 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
                     <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
                     <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
                         <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div class="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                <div class="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
                     <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
                     <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
                         <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div class="xl:bg-slate-300 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                <div class="xl:bg-slate-300 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
                     <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
                     <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
                         <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div class="bg-slate-300 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                <div class="xl:bg-slate-300 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
                     <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
                     <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
                         <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>

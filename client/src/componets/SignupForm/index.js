@@ -1,9 +1,8 @@
 import React from 'react'
 
 function SignupForm() {
-    return <div>
-        SignupForm
-    </div>
+    return (
+       
+    )
 }
-
 export default SignupForm
