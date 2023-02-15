@@ -13,7 +13,7 @@ const MoneyDash = () => {
 
 
             {/* entire container for dashboard*/}
-            <div className="xl:flex xl:flex-row sm:flex sm:flex-col">
+            <div className="xl:flex xl:flex-row xl:items-center xl:justify-center sm:flex sm:flex-col">
 
                 {/* large graph bar line combo with month selector*/}
                 <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-1 xl:p-5 sm:m-1 sm:p-1 xl:flex sm:flex sm:flex-col sm:items-center">
