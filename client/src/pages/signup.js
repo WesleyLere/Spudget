@@ -1,7 +1,7 @@
 import React from 'react';
 import SignupForm from '../componets/SignupForm';
 
-const signup = () => {
+const SignUp = () => {
     return (
         <section className="">
             <div className=''>
@@ -17,4 +17,4 @@ const signup = () => {
     )
 }
 
-export default signup; 
+export default SignUp; 
