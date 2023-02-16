@@ -79,9 +79,9 @@ const MoneyDash = () => {
 
                         />
                         <div>
-                            <button className='bg-green-700 xl:hover:bg-yellow-600 xl:hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Bar</h3></button>
-                            <button className='bg-green-700 xl:hover:bg-teal-600 xl:hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Pie</h3></button>
-                            <button className='bg-green-700 xl:hover:bg-purple-600 xl:hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Line</h3></button>
+                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-yellow-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Bar</h3></button>
+                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-teal-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Pie</h3></button>
+                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-purple-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Line</h3></button>
                         </div>
                     </div>
                 </container>
