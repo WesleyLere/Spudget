@@ -1,12 +1,12 @@
 import React from 'react';
-import uploadForm from '../componets/Transaction/uploadForm';
-import Transaction from '../componets/Transaction/uploadForm';
+import UploadForm from '../components/Transaction/UploadForm';
+import Transaction from '../components/Transaction/transactionForm';
 
 function TransactionPage() {
 
     return(
         <>
-            <uploadForm/>
+            <UploadForm/>
         </>
     )
 }

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Signup from './pages/signup'
 import MoneyDash from './pages/MoneyDash'
 import Cta from './pages/Cta'
-import NavTabs from './componets/NavTabs'
+import NavTabs from './components/NavTabs'
 import Login from './pages/Login';
 
 import TransactionPage from './pages/NewTransactions';

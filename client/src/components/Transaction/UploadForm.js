@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewTransactions = () => {
+const UploadForm = () => {
 
     return (
         <section className="flex flex-col flex-wrap items-center justify-center m-5 p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
@@ -27,4 +27,4 @@ const NewTransactions = () => {
     )
 }
 
-export default NewTransactions; 
+export default UploadForm; 
