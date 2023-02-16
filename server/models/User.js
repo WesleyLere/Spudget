@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const Transaction = require('./Transaction')
+const transactionSchema = require('./Transaction')
 
 const userSchema = new Schema(
     {
@@ -21,7 +21,7 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-        transactions: [Transaction.Schema],
+        transactions: [transactionSchema],
         limits: [
             {
                 type: Schema.Types.ObjectId,
