@@ -12,3 +12,12 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
+
+#signUpForm {
+    background-image: url('../public/signUpPotatos.jpg');
+
+}
+
+ #loginForm {
+    background-image: url('../public/signUpPotatos.jpg');
+}
