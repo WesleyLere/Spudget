@@ -5,6 +5,7 @@ import Cta from './pages/Cta'
 import NavTabs from './componets/NavTabs'
 import Login from './pages/Login';
 
+import TransactionPage from './pages/NewTransactions';
 
 function App() {
     const [tab, setTab] = useState()
@@ -16,6 +17,8 @@ function App() {
         return <Signup />;
     }else if (tab === "Login"){
         return <Login/>
+    } else if (tab === "New Transactions"){
+        return <TransactionPage/>
     }else {
         return <Cta />;
     }
