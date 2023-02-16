@@ -4,33 +4,33 @@ const Cta = () => {
     return (
         <section className='sm:w-auto xl:w-auto'>
 
-            <div className='xl:p-20 sm:p-5 xl:bg-gradient-to-t from-lime-600 to-lime-500 xl:flex xl:flex-row xl:items-center xl:justify-center'>
+            <div className=' xl:p-20 xl:h-screen sm:p-5 xl:bg-gradient-to-t from-lime-600 to-lime-500 xl:flex xl:flex-row xl:items-center xl:justify-center'>
 
-                <div class="xl:bg-slate-300 sm:bg-slate-600 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
-                    <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
+                <div className="xl:w-full xl:h-full xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-600 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Keep Track of your Spending</h2>
+                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
+                        <img className="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div class="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
-                    <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
+                <div className="xl:w-full xl:h-full xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Import your Reciepts!</h2>
+                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
+                        <img className="w-full h-auto" src="phone.png" alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div class="xl:bg-slate-300 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
-                    <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
+                <div className="xl:w-full xl:h-full xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-16 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Watch your savings grow!</h2>
+                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
+                        <img className="w-full h-auto" src="savings.png" alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div class="bg-slate-300 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 class="xl:text-2xl sm:text-2xl sm: xl:text-center sm:text-center">Keep Track of your Spending</h2>
-                    <div class="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img class="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
+                <div className="xl:w-full xl:h-full xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">We Also Have a Potato as a Mascot.</h2>
+                    <div className="xl:mb-10 xl:pb-10 sm:m-10 sm:p-10">
+                        <img className="w-full h-auto xl:mb-5 xl:p-10 xl:hover:rotate-6" src="Spuddy.png" alt="sample graph"></img>
                     </div>
                 </div>
 
@@ -41,7 +41,11 @@ const Cta = () => {
             <React.Fragment>
                 <div className='xl:bg-gradient-to-r from-slate-400 via-slate-300 to-slate-400'>
                     <div className="">
+                        <div className='xl:hidden sm:justify-between sm:flex-row sm:flex sm:flex-wrap sm:m-5 sm:p-5'>
+                            <h3>Used by companies all over the world</h3>
+                        </div>
                         <div className='xl:flex xl:justify-between xl:flex-row sm:flex sm:flex-wrap'>
+
                             <h2 className="xl:m-5 xl:p-5 sm:m-1 sm:p-1 text-2xl sm:text-lime-500 xl:text-lime-50 xl:flex sm:flex sm:justify-center">Google</h2>
                             <h2 className="xl:m-5 xl:p-5 sm:m-1 sm:p-1 text-2xl sm:text-lime-500 xl:text-lime-50 xl:flex sm:flex sm:justify-center">NY Times</h2>
                             <h2 className="xl:m-5 xl:p-5 sm:m-1 sm:p-1 text-2xl sm:text-lime-500 xl:text-lime-50 xl:flex sm:flex sm:justify-center">WellsFargo</h2>

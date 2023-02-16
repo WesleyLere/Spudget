@@ -10,6 +10,9 @@ function NavTabs({ tab, handlePageChange }) {
       <div className='flex flex-row justify-start'>
         <img className='m-5 h-16' src='logo.png'></img>
       </div>
+      <div>
+
+     
       <nav className="text-neutral-200 justify-center flex flex-row nav nav-tabs">
 
         <li className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg m-5 p-5 nav-item">
@@ -70,8 +73,9 @@ function NavTabs({ tab, handlePageChange }) {
           </a>
         </li>
       </nav>
-
+       </div>
     </div>
+   
   )
 }
 
