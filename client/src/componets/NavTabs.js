@@ -5,7 +5,7 @@ import React from 'react';
 // not sure how implement that in react. 
 function NavTabs({ tab, handlePageChange }) {
   return (
-    <div className="bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl m-10 text-xl font-semibold">
+    <div className="sticky top-1 z-50 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl m-10 text-xl font-semibold">
 
       <div className='flex flex-row justify-start'>
         <img className='m-5 h-16' src='logo.png'></img>
