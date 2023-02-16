@@ -4,12 +4,12 @@ import Plot from 'react-plotly.js'
 
 const MoneyDash = () => {
     return (
-        <section className="flex flex-row flex-wrap items-center justify-center p-5 bg-gradient-to-t from-lime-600 to-lime-500 ">
+        <section className="flex flex-row flex-wrap items-center justify-center p-5 bg-gradient-to-t from-lime-600 to-lime-500 sm:bg-gradient-to-r sm:from-lime-400 sm:to-lime-700 sm:flex sm:flex-col sm:items-center sm:overflow-auto touch-auto">
 
             <div className="flex flex-row flex-wrap  items-center justify-center rounded-2xl border-4">
 
-                <container className='flex flex-row flex-wrap  items-center justify-center'>
-                    <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-1 sm:p-1 xl:flex sm:flex sm:flex-col sm:items-center">
+                <container className='flex flex-row flex-wrap items-center justify-center '>
+                    <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <div className="">
                             <h2 className="">
                                 This Months Spending:
@@ -30,7 +30,7 @@ const MoneyDash = () => {
                                 </select>
                             </h2>
                         </div>
-                        <div id="graph">
+                        <div className="sm:overflow-auto touch-auto sm:touch-pan-down sm:m-10 sm:p-10" id="graph">
 
                             <Plot data={[
                                 {
@@ -54,7 +54,7 @@ const MoneyDash = () => {
                 </container>
 
                 <container className="flex flex-row flex-wrap  items-center justify-center">
-                    <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-1 sm:p-1 xl:flex sm:flex sm:flex-col sm:items-center">
+                    <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Recent Spending Habits</h1>
                         <Plot data={[
                             {
@@ -79,15 +79,15 @@ const MoneyDash = () => {
 
                         />
                         <div>
-                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-yellow-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Bar</h3></button>
-                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-teal-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Pie</h3></button>
-                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-purple-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:'><h3>Line</h3></button>
+                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-yellow-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:m-10 sm:p-10'><h3>Bar</h3></button>
+                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-teal-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:m-10 sm:p-10'><h3>Pie</h3></button>
+                            <button className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-purple-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:m-10 sm:p-10'><h3>Line</h3></button>
                         </div>
                     </div>
                 </container>
 
                 <container className="flex flex-row flex-wrap  items-center justify-center">
-                <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-3 sm:p-3 xl:flex sm:flex sm:flex-col sm:items-center">
+                <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
                             <Plot data={[
