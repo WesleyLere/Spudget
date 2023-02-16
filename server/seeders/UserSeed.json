@@ -2,6 +2,40 @@
     {
         "username" : "User1",
         "email" : "User1@fakemail.com",
-        "password" : "Qwerty123"
+        "password" : "Qwerty123",
+        "transactions": [
+        {
+            "date": 5,
+            "month": 2,
+            "year": 2023,
+            "amount": 40.16,
+            "vendor": "Red's Savoy Pizza",
+            "category": "food"
+        },
+        {
+            "date": 14,
+            "month": 2,
+            "year": 2023,
+            "amount": 36.23,
+            "vendor": "UBER",
+            "category": "transport"
+        },
+        {
+            "date": 8,
+            "month": 2,
+            "year": 2023,
+            "amount": 123.00,
+            "vendor": "Amazon",
+            "category": "miscellaneous"
+        },
+        {
+            "date": 3,
+            "month": 1,
+            "year": 2023,
+            "amount": 50.00,
+            "vendor": "Speedway",
+            "category": "gasoline"
+        }
+    ]
     }
 ]
