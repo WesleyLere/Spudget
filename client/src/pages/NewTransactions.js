@@ -6,7 +6,7 @@ function TransactionPage() {
 
     return(
         <>
-            <Transaction/>
+            <uploadForm/>
         </>
     )
 }
