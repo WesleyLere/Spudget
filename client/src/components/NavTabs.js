@@ -8,7 +8,7 @@ function NavTabs({ tab, handlePageChange }) {
     <div className="xl:sticky xl:flex-row xl:im xl:top-1 xl:z-50 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl xl:m-10 sm:m-3 text-xl font-semibold sm:flex sm:flex-col sm:items-center">
 
       <div className='flex flex-row justify-start'>
-        <img className=' mt-5 h-16' src='logo.png'></img>
+        <img className='m-2 h-16' src='logo.png'></img>
       </div>
       <div>
 
