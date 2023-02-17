@@ -24,10 +24,10 @@ const transactionSchema = new mongoose.Schema({
   category: {
     type: mongoose.Schema.Types.ObjectId, 
     ref: "Category", 
-    required: true
+    required: false
   }
 });
 
-const Transaction = mongoose.model("Transaction", transactionSchema);
+// const Transaction = mongoose.model("Transaction", transactionSchema);
 
-module.exports = Transaction;
+module.exports = transactionSchema;
