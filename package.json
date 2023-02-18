@@ -1,6 +1,6 @@
 {
     "name": "Spudget",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "scripts": {
         "start": "node server/server.js",
         "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
