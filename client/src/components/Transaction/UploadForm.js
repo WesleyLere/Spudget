@@ -91,26 +91,47 @@ const UploadForm = () => {
                                     <div class="flex flex-shrink-0 items-center justify-center rounded-full">
                                         <img className='m-2 h-16' src='logo.png'></img>
                                     </div>
-                                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                        <h3 class="text-2xl leading-6 text-lime-600" id="modal-title">Receipt Import</h3>
-                                        <div class="mt-2">
-                                            <form className="bg-slate-100 rounded-2xl">
-                                                <select className="bg-slate-300 rounded-full m-5" for="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
-                                                    <option value="" disabled>Categories</option>
-                                                    <option value="Toll">Toll</option>
-                                                    <option value="Food">Food</option>
-                                                    <option value="Parking">Parking</option>
-                                                    <option value="Transport">Transport</option>
-                                                    <option value="Accommodation">Accommodation</option>
-                                                    <option value="Gasoline">Gasoline</option>
-                                                    <option value="Telecom">Telecom</option>
-                                                    <option value="Miscellaneaous">Miscellaneaous</option>
-                                                </select>
 
-                                                <input className="bg-slate-200 rounded-full m-5" id="date" type="date" name="date" value={date} onChange={onInputchange}></input>
-                                                <input className="bg-slate-200 rounded-full m-5" id="supplier" type="text" name="supplier" value={supplier} onChange={onInputchange}></input>
-                                                <input className="bg-slate-200 rounded-full m-5" id="totalAmount" type="number" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
+                                    
+                                    <div class="mt-5  ml-4 text-left">
+                                        <h3 class="text-2xl  text-lime-600" id="modal-title">Receipt Import</h3>
+                                        <div class="mt-2">
+
+                                            <form className="bg-slate-100 rounded-2xl">
+                                                <div className='text-xl m-5 p-5'>
+                                                    <select className="bg-slate-300 rounded-full" for="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
+                                                        <option value="" disabled>Categories</option>
+                                                        <option value="Toll">Toll</option>
+                                                        <option value="Food">Food</option>
+                                                        <option value="Parking">Parking</option>
+                                                        <option value="Transport">Transport</option>
+                                                        <option value="Accommodation">Accommodation</option>
+                                                        <option value="Gasoline">Gasoline</option>
+                                                        <option value="Telecom">Telecom</option>
+                                                        <option value="Miscellaneaous">Miscellaneaous</option>
+                                                    </select>
+
+                                                </div>
+
+
+                                                <div className='text-xl m-5'>
+                                                    <h1 className="text-lime-600">Purchase Date</h1>
+                                                    <input className="bg-slate-200 rounded-full" id="date" type="date" name="date" value={date} onChange={onInputchange}></input>
+                                                </div>
+
+                                                <div className='text-xl m-5'>
+                                                    <h1 className="text-lime-600">Place of Purchase</h1>
+                                                    <input className="bg-slate-200 rounded-full " id="supplier" type="text" name="supplier" value={supplier} onChange={onInputchange}></input>
+                                                </div>
+
+
+                                                <div className='text-xl m-5'>
+                                                    <h1 className="text-lime-600">Transaction Amount</h1>
+                                                    <input className="bg-slate-200 rounded-full mb-5" id="totalAmount" type="number" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
+                                                </div>
+
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>
