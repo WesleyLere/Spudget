@@ -26,7 +26,7 @@ const UploadForm = () => {
 
 
     const submitFile = async (event) => {
-        
+
         event.preventDefault();
 
         const formData = new FormData();
@@ -46,7 +46,7 @@ const UploadForm = () => {
             .catch(error => {
                 console.error(error);
             });
-            openModal()
+        openModal()
     }
 
     const closeModal = () => {
@@ -64,9 +64,12 @@ const UploadForm = () => {
                 <div className="rounded-3xl text-xl flex flex-col flex-wrap items-center justify-center drop-shadow-2xl bg-green-600 m-10 p-5">
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
-                <div>
+                <div className='flex-row flex'>
                     <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Upload" />
+                    </button>
+                    <button onClick={openModal} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                        <input type="button" value="Manual Entry" onClick={submitFile} />
                     </button>
                 </div>
                 <div className='flex flex-col flex-wrap items-center justify-center'>
@@ -90,7 +93,7 @@ const UploadForm = () => {
                                         <img className='m-2 h-16' src='logo.png'></img>
                                     </div>
 
-                                    
+
                                     <div class="mt-5  ml-4 text-left">
                                         <h3 class="text-2xl  text-lime-600" id="modal-title">Receipt Import</h3>
                                         <div class="mt-2">
