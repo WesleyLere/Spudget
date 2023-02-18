@@ -62,13 +62,13 @@ const Cta = () => {
                 <div className='xl:bg-gradient-to-r from-stone-400 via-stone-300 to-stone-400 xl:w-auto'>
                     <div className='xl:flex sm:flex sm:flex-col xl:flex-row xl:items-center xl:justify-center'>
                         <div className="flex flex-row">
-                            <img className='xl:m-5 xl:p-5 xl:shadow-xl sm:rounded-full' src='Happyspouses.jpg'></img>
+                            <img className='xl:m-5 xl:p-5 xl:shadow-xl sm:rounded-full' src='Happyspouses.jpg' alt=''></img>
                         </div>
                         <div className="flex flex-col">
                             <h2 className="m-5 p-5 text-2xl">All of your Spending in one place!</h2>
                             <h2 className="m-5 p-5 text-2xl">Get notified before reacurring transactions!</h2>
                             <h2 className="m-5 p-5 text-2xl">Grow your Spuds with us!</h2>
-                            <h2 className="m-5 p-5 text-2xl"></h2>
+                            
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@ const Cta = () => {
                 <section className='text-2xl bg-gradient-to-b from-lime-600 to-lime-500'>
                     <div className='xl:flex xl:flex-row xl:justify-evenly md:flex md:flex-row md:justify-evenly'>
                         <div className='xl:flex xl:justify-center'>
-                            <img className='xl:p-5 xl:m-5 md:flex md:flex-row md:justify-evenly' src='logo.png'></img>
+                            <img className='xl:p-5 xl:m-5 md:flex md:flex-row md:justify-evenly' src='logo.png' alt=''></img>
                         </div>
                         <div className='m-10 p-10 flex flex-col items-center justify-center'>
                             <h2 className='flex-1 text-white'>Contact Us</h2>
