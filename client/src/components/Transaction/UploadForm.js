@@ -6,7 +6,7 @@ const UploadForm = () => {
     const [date, setDate] = useState('');
     const [supplier, setSupplier] = useState('');
     const [totalAmount, setTotalAmount] = useState(0);
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     function handleFile(event) {
         setFile(event.target.files[0])
@@ -48,24 +48,27 @@ const UploadForm = () => {
             });
     }
 
-const closeModal= () => {
-    setIsOpen(false);
-}
+    const closeModal = () => {
+        setIsOpen(false);
+    }
 
-const openModal =()=> {
-    setIsOpen(true);
-}
+    const openModal = () => {
+        setIsOpen(true);
+    }
 
     return (
-        <section className="flex flex-col flex-wrap items-center justify-center m-5 p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
+        <section className="xl:flex xl:flex-col xl:flex-wrap xl:items-center justify-center xl:m-5 xl:p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
             <h2 className="flex flex-col flex-wrap items-center justify-center text-slate-100 text-5xl m-5 p-5">Upload your Recipets here!</h2>
             <form id="upload-form">
                 <div className="rounded-3xl text-xl flex flex-col flex-wrap items-center justify-center drop-shadow-2xl bg-green-600 m-10 p-5">
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
                 <div>
-                    <button onClick={openModal} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                    <button className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Upload" onClick={submitFile} />
+                    </button>
+                    <button onClick={openModal} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                        <input type="button" value="Manual Entry" onClick={submitFile} />
                     </button>
                 </div>
                 <div className='flex flex-col flex-wrap items-center justify-center'>
@@ -79,10 +82,7 @@ const openModal =()=> {
             </form>
 
             <div className={`relative z-10 ${isOpen ? '' : 'hidden'}`}>
-
-                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-                <div class="fixed inset-0 z-10 overflow-y-auto">
+                <div class="sm:flex sm:flex-wrap sm:flex-col sm:p-1 fixed inset-0 z-10 overflow-y-auto">
                     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
 
                         <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
@@ -91,15 +91,47 @@ const openModal =()=> {
                                     <div class="flex flex-shrink-0 items-center justify-center rounded-full">
                                         <img className='m-2 h-16' src='logo.png'></img>
                                     </div>
-                                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                        <h3 class="text-2xl leading-6 text-lime-600" id="modal-title">Receipt Import</h3>
+
+                                    
+                                    <div class="mt-5  ml-4 text-left">
+                                        <h3 class="text-2xl  text-lime-600" id="modal-title">Receipt Import</h3>
                                         <div class="mt-2">
-                                            <form>
-                                                <input id="category" type="text" name="category" value={category} onChange={onInputchange}></input>
-                                                <input id="date" type="date" name="date" value={date} onChange={onInputchange}></input>
-                                                <input id="supplier" type="text" name="supplier" value={supplier} onChange={onInputchange}></input>
-                                                <input id="totalAmount" type="number" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
+
+                                            <form className="bg-slate-100 rounded-2xl">
+                                                <div className='text-xl m-5 p-5'>
+                                                    <select className="bg-slate-300 rounded-full" for="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
+                                                        <option value="" disabled>Categories</option>
+                                                        <option value="Toll">Toll</option>
+                                                        <option value="Food">Food</option>
+                                                        <option value="Parking">Parking</option>
+                                                        <option value="Transport">Transport</option>
+                                                        <option value="Accommodation">Accommodation</option>
+                                                        <option value="Gasoline">Gasoline</option>
+                                                        <option value="Telecom">Telecom</option>
+                                                        <option value="Miscellaneaous">Miscellaneaous</option>
+                                                    </select>
+
+                                                </div>
+
+
+                                                <div className='text-xl m-5'>
+                                                    <h1 className="text-lime-600">Purchase Date</h1>
+                                                    <input className="bg-slate-200 rounded-full" id="date" type="date" name="date" value={date} onChange={onInputchange}></input>
+                                                </div>
+
+                                                <div className='text-xl m-5'>
+                                                    <h1 className="text-lime-600">Place of Purchase</h1>
+                                                    <input className="bg-slate-200 rounded-full " id="supplier" type="text" name="supplier" value={supplier} onChange={onInputchange}></input>
+                                                </div>
+
+
+                                                <div className='text-xl m-5'>
+                                                    <h1 className="text-lime-600">Transaction Amount</h1>
+                                                    <input className="bg-slate-200 rounded-full mb-5" id="totalAmount" type="number" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
+                                                </div>
+
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>
