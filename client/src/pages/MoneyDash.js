@@ -6,7 +6,20 @@ const MoneyDash = () => {
     return (
         <section className="flex flex-row flex-wrap items-center justify-center p-5 bg-gradient-to-t from-lime-600 to-lime-500 sm:bg-gradient-to-r sm:from-lime-400 sm:to-lime-700 sm:flex sm:flex-col sm:items-center sm:overflow-auto touch-auto">
 
+
+            <div className="flex flex-col items-center justify-center bg-slate-100 rounded-2xl mb-5 p-5">
+                <h2 className="text-xl m-1">Enter spending limit here:</h2>
+            <form className="">
+                <input className="bg-slate-300 rounded-full " type="text"></input>
+                <button className='text-md p-2 m-1 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                        <input className="cursor-pointer" type="button" value="Submit"/>
+                    </button>
+            </form>
+            </div>
+            
+            
             <div className="flex flex-row flex-wrap  items-center justify-center rounded-2xl border-4">
+
 
                 <container className='flex flex-row flex-wrap items-center justify-center '>
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
@@ -87,7 +100,7 @@ const MoneyDash = () => {
                 </container>
 
                 <container className="flex flex-row flex-wrap  items-center justify-center">
-                <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
+                    <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
                             <Plot data={[
@@ -119,6 +132,7 @@ const MoneyDash = () => {
                                 }}
                             />
                         </div>
+
                     </div>
                 </container>
             </div>
