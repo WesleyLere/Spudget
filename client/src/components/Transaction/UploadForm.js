@@ -57,6 +57,13 @@ const UploadForm = () => {
         setIsOpen(true);
     }
 
+    function importRecipt() {
+        
+        console.log(FormData)
+        
+        closeModal()
+    }
+
     return (
         <section className="xl:flex xl:flex-col xl:flex-wrap xl:items-center justify-center xl:m-5 xl:p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
             <h2 className="flex flex-col flex-wrap items-center justify-center text-slate-100 text-5xl m-5 p-5">Upload your Recipets here!</h2>
@@ -138,7 +145,7 @@ const UploadForm = () => {
                                 </div>
                             </div>
                             <div class="flex flex-row justify-center bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                <button onClick={submitFile} type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Import Transaction</button>
+                                <button onClick={importRecipt} type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Import Transaction</button>
                                 <button onClick={closeModal} type="button" class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                             </div>
                         </div>
