@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react'
 import DailySpendingLineGraph from "../components/Graphs/DailySpendingLineGraph"
 import RecentSpendingPieChart from "../components/Graphs/RecentSpending/RecentSpendingPieChart"
 import TotalSpending from "../components/Graphs/TotalSpending"
-
+import { ADD_LIMIT } from '../../utils/mutations'
+import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
 
 const MoneyDash = () => {
     

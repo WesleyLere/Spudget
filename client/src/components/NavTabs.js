@@ -1,9 +1,50 @@
 import React from 'react';
+import auth from '../utils/auth';
 // I want to have the nav bar change when logged in
 // prior to logging in nav bar would show log in and sign up buttons
 //after logging in nav bar would show "dashboard" "import" and "sign out" 
 // not sure how implement that in react. 
-function NavTabs({ tab, handlePageChange }) {
+function NavTabs() {
+
+  function showNavigation() {
+    if (auth.loggedIn()) {
+      return (<>
+
+        <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+
+            <button className="" onClick={() => auth.logout()}>
+              Logout
+            </button>
+        </div>
+
+      </>
+      )
+    } else {
+      return (<>
+        <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+
+          <a href='Login'
+
+          >
+            <button className="">
+              Login
+            </button>
+          </a>
+        </div>
+        <div className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+          <a href='Signup'
+
+          >
+            <button className=''>
+              Sign Up
+            </button>
+
+          </a>
+        </div>
+      </>)
+    }
+  }
+
   return (
     <div className="xl:sticky xl:flex-row xl:im xl:top-1 xl:z-50 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl xl:m-10 sm:m-3 text-xl font-semibold sm:flex sm:flex-col sm:items-center">
 
@@ -12,70 +53,36 @@ function NavTabs({ tab, handlePageChange }) {
       </div>
       <div>
 
-     
-      <nav className="text-neutral-200 justify-center xl:flex xl:flex-row nav nav-tabs sm:flex sm:flex-col sm:justify-between">
 
-        <ul className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+        <nav className="text-neutral-200 justify-center xl:flex xl:flex-row nav nav-tabs sm:flex sm:flex-col sm:justify-between">
+          <div className='flex flex-row'>
+          {showNavigation()}
+          </div>
+          <div className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+            <a href='Moneydash'
 
-          <a href='Login'
-            // onClick={() => handlePageChange('Login')}
-            // className={tab === 'Login' ? 'nav-link active' : 'nav-link'}
-          >
-            <button className="">
-              Login
-            </button>
-          </a>
-        </ul>
-        <ul className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='Signup'
-            // onClick={() => handlePageChange('Signup')}
-            // className={tab === 'signup' ? 'nav-link active' : 'nav-link'}
-          >
-            <button className=''>
-              Sign Up
-            </button>
+            >
+              <button className=''>
+                Money Dashboard
+              </button>
 
-          </a>
-        </ul>
-        <ul className="hover:scale-[1.2] hover:text-emerald-400 hover:drop-shadow-lg text xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='Cta'
-            // onClick={() => handlePageChange('Cta')}
-            // className={tab === 'cta' ? 'nav-link active' : 'nav-link'}
-          >
-            <button className=''>
-              Cta
-            </button>
+            </a>
+          </div>
 
-          </a>
-        </ul>
+          <div className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
+            <a href='NewTransactions'
 
-        <ul className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='Moneydash'
-            // onClick={() => handlePageChange('Moneydash')}
-            // className={tab === 'moneydash' ? 'nav-link active' : 'nav-link'}
-          >
-            <button className=''>
-              Money Dashboard
-            </button>
+            >
+              <button className=''>
+                New Transactions
+              </button>
 
-          </a>
-        </ul>
-
-        <ul className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
-          <a href='NewTransactions'
-            // onClick={() => handlePageChange('New Transactions')}
-            // className={tab === 'New Transactions' ? 'nav-link active' : 'nav-link'}
-          >
-            <button className=''>
-              New Transactions
-            </button>
-
-          </a>
-        </ul>
-      </nav>
-       </div>
+            </a>
+          </div>
+        </nav>
+      </div>
     </div>
-   
+
   )
 }
 
