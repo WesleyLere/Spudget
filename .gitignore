@@ -4,5 +4,7 @@ build
 
 node_modules
 
+uploads
+
 .env
 .vscode

@@ -7,7 +7,7 @@ function SignupForm() {
             <form class="xl:items-center flex flex-col xl:justify-center  shadow-lg px-8 pt-6 pb-8 mb-4 rounded-2xl xl:w-full signUp-form" id='signUpForm'>
 
                 <h1 className=' text-slate-200 flex justify-center text-5xl m-5'> Signup here!</h1>
-                <div class="xl:items-center  xl:justify-center xl:w-3/4 mb-4">
+                <div class="xl:items-center  xl:justify-center xl:w-1/4 mb-4">
                     <label class="block text-slate-200 text-sm font-bold mb-2" for="signupUsername">
                         Username
                     </label>
@@ -15,7 +15,7 @@ function SignupForm() {
                         class="shadow-lg border-2 rounded-full w-full py-2 px-3 text-gray-700 border-green-500 focus:outline-none focus:shadow-outline"
                         id="signupUsername" type="text" placeholder="Username" />
                 </div>
-                <div class="xl:items-center xl:justify-center xl:w-3/4 mb-4">
+                <div class="xl:items-center xl:justify-center xl:w-1/4 mb-4">
                     <label class="block text-slate-200 text-sm font-bold mb-2" for="signupEmail">
                         Email
                     </label>
@@ -23,7 +23,7 @@ function SignupForm() {
                         class="shadow-lg border-2 rounded-full w-full py-2 px-3 text-gray-700 border-green-600 focus:outline-none focus:shadow-outline"
                         id="signupEmail" type="text" placeholder="Email" />
                 </div>
-                <div class="xl:items-center xl:justify-center xl:w-3/4 mb-4">
+                <div class="xl:items-center xl:justify-center xl:w-1/4 mb-4">
                     <label class="block text-slate-200 text-sm font-bold mb-2" for="signupPassword">
                         Password
                     </label>
