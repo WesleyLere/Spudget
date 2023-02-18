@@ -6,7 +6,7 @@ const Cta = () => {
 
             <div className=' xl:p-20 xl:h-screen sm:p-5 xl:bg-gradient-to-t from-lime-600 to-lime-500 xl:flex xl:flex-row xl:items-center xl:justify-center'>
 
-                <div className="xl:w-full xl:h-full xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-600 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl  sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                <div className="xl:w-full xl:h-full  xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
                     <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Keep Track of your Spending</h2>
                     <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
                         <img className="w-full h-auto" src="samplegraph.png" alt="sample graph"></img>
