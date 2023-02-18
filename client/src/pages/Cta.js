@@ -29,7 +29,7 @@ const Cta = () => {
 
                 <div className="xl:w-full xl:h-full  xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-10 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
                     <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">We Also Have a Potato as a Mascot.</h2>
-                    <div className="xl: xl: sm:m-10 sm:p-10">
+                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
                         <img className="w-full h-auto xl:mt-30 xl:mb-5 xl:p-10 xl:hover:rotate-6" src="Spuddy.png" alt="sample graph"></img>
                     </div>
                 </div>
