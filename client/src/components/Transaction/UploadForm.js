@@ -26,7 +26,7 @@ const UploadForm = () => {
 
 
     const submitFile = async (event) => {
-
+        
         event.preventDefault();
 
         const formData = new FormData();
@@ -46,6 +46,7 @@ const UploadForm = () => {
             .catch(error => {
                 console.error(error);
             });
+            openModal()
     }
 
     const closeModal = () => {
@@ -64,11 +65,8 @@ const UploadForm = () => {
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
                 <div>
-                    <button className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
-                        <input type="button" value="Upload" onClick={submitFile} />
-                    </button>
-                    <button onClick={openModal} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
-                        <input type="button" value="Manual Entry" onClick={submitFile} />
+                    <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                        <input type="button" value="Upload" />
                     </button>
                 </div>
                 <div className='flex flex-col flex-wrap items-center justify-center'>
@@ -137,7 +135,7 @@ const UploadForm = () => {
                                 </div>
                             </div>
                             <div class="flex flex-row justify-center bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                <button type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Import Transaction</button>
+                                <button onClick={submitFile} type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Import Transaction</button>
                                 <button onClick={closeModal} type="button" class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                             </div>
                         </div>

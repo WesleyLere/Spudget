@@ -3,12 +3,8 @@ import SignupForm from '../components/SignupForm';
 
 const SignUp = () => {
     return (
-        <section className="">
-              
-                
-                    <SignupForm/>
-                
-            
+        <section>
+            <SignupForm />
         </section>
     )
 }
