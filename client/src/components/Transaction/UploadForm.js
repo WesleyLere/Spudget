@@ -123,12 +123,12 @@ const UploadForm = () => {
                                                 <div className='text-xl m-5'>
                                                     <h1 className="text-lime-600">Place of Purchase</h1>
                                                     <input className="bg-slate-200 rounded-full " id="supplier" type="text" name="supplier" value={supplier} onChange={onInputchange}></input>
-                                                </div>
+                                                </div> 
 
 
                                                 <div className='text-xl m-5'>
                                                     <h1 className="text-lime-600">Transaction Amount</h1>
-                                                    <input className="bg-slate-200 rounded-full mb-5" id="totalAmount" type="decimal" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
+                                                    <input className="bg-slate-200 rounded-full mb-5" id="totalAmount" type="number" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
                                                 </div>
 
                                             </form>
