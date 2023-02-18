@@ -100,16 +100,16 @@ const UploadForm = () => {
 
                                             <form className="bg-slate-100 rounded-2xl">
                                                 <div className='text-xl m-5 p-5'>
-                                                    <select className="bg-slate-300 rounded-full" for="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
-                                                        <option value="" disabled>Categories</option>
-                                                        <option value="Toll">Toll</option>
-                                                        <option value="Food">Food</option>
-                                                        <option value="Parking">Parking</option>
-                                                        <option value="Transport">Transport</option>
-                                                        <option value="Accommodation">Accommodation</option>
-                                                        <option value="Gasoline">Gasoline</option>
-                                                        <option value="Telecom">Telecom</option>
-                                                        <option value="Miscellaneaous">Miscellaneaous</option>
+                                                    <select className=" bg-slate-300 rounded-full" for="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
+                                                        <option className="" value="" disabled>Categories</option>
+                                                        <option className="" value="Toll">Toll</option>
+                                                        <option className="" value="Food">Food</option>
+                                                        <option className="" value="Parking">Parking</option>
+                                                        <option className="" value="Transport">Transport</option>
+                                                        <option className="" value="Accommodation">Accommodation</option>
+                                                        <option className="" value="Gasoline">Gasoline</option>
+                                                        <option className="" value="Telecom">Telecom</option>
+                                                        <option className="" value="Miscellaneaous">Miscellaneaous</option>
                                                     </select>
 
                                                 </div>
@@ -128,7 +128,7 @@ const UploadForm = () => {
 
                                                 <div className='text-xl m-5'>
                                                     <h1 className="text-lime-600">Transaction Amount</h1>
-                                                    <input className="bg-slate-200 rounded-full mb-5" id="totalAmount" type="number" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
+                                                    <input className="bg-slate-200 rounded-full mb-5" id="totalAmount" type="decimal" name="totalAmount" value={totalAmount} onChange={onInputchange}></input>
                                                 </div>
 
                                             </form>
