@@ -8,7 +8,7 @@ function NavTabs({ tab, handlePageChange }) {
     <div className="xl:sticky xl:flex-row xl:im xl:top-1 xl:z-50 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl xl:m-10 sm:m-3 text-xl font-semibold sm:flex sm:flex-col sm:items-center">
 
       <div className='flex flex-row justify-start'>
-        <img className='m-2 h-16' src='logo.png'></img>
+        <img className='m-2 h-16' src='logo.png' alt='Potato'></img>
       </div>
       <div>
 
@@ -17,9 +17,9 @@ function NavTabs({ tab, handlePageChange }) {
 
         <ul className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
 
-          <a href='#Login'
-            onClick={() => handlePageChange('Login')}
-            className={tab === 'Login' ? 'nav-link active' : 'nav-link'}
+          <a href='Login'
+            // onClick={() => handlePageChange('Login')}
+            // className={tab === 'Login' ? 'nav-link active' : 'nav-link'}
           >
             <button className="">
               Login
@@ -27,9 +27,9 @@ function NavTabs({ tab, handlePageChange }) {
           </a>
         </ul>
         <ul className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='#signup'
-            onClick={() => handlePageChange('Signup')}
-            className={tab === 'signup' ? 'nav-link active' : 'nav-link'}
+          <a href='Signup'
+            // onClick={() => handlePageChange('Signup')}
+            // className={tab === 'signup' ? 'nav-link active' : 'nav-link'}
           >
             <button className=''>
               Sign Up
@@ -38,9 +38,9 @@ function NavTabs({ tab, handlePageChange }) {
           </a>
         </ul>
         <ul className="hover:scale-[1.2] hover:text-emerald-400 hover:drop-shadow-lg text xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='#cta'
-            onClick={() => handlePageChange('Cta')}
-            className={tab === 'cta' ? 'nav-link active' : 'nav-link'}
+          <a href='Cta'
+            // onClick={() => handlePageChange('Cta')}
+            // className={tab === 'cta' ? 'nav-link active' : 'nav-link'}
           >
             <button className=''>
               Cta
@@ -50,9 +50,9 @@ function NavTabs({ tab, handlePageChange }) {
         </ul>
 
         <ul className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='#moneydash'
-            onClick={() => handlePageChange('Moneydash')}
-            className={tab === 'moneydash' ? 'nav-link active' : 'nav-link'}
+          <a href='Moneydash'
+            // onClick={() => handlePageChange('Moneydash')}
+            // className={tab === 'moneydash' ? 'nav-link active' : 'nav-link'}
           >
             <button className=''>
               Money Dashboard
@@ -62,9 +62,9 @@ function NavTabs({ tab, handlePageChange }) {
         </ul>
 
         <ul className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
-          <a href='#newTransactions'
-            onClick={() => handlePageChange('New Transactions')}
-            className={tab === 'New Transactions' ? 'nav-link active' : 'nav-link'}
+          <a href='NewTransactions'
+            // onClick={() => handlePageChange('New Transactions')}
+            // className={tab === 'New Transactions' ? 'nav-link active' : 'nav-link'}
           >
             <button className=''>
               New Transactions

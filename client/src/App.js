@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -35,34 +37,68 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [tab, setTab] = useState()
-    
-  const renderTab = () => {
-    if (tab === "Moneydash") {
-      return <MoneyDash/>
-    } else if (tab === "Signup"){
-        return <Signup />;
-    }else if (tab === "Login"){
-        return <Login/>
-    } else if (tab === "New Transactions"){
-        return <TransactionPage/>
-    }else {
-        return <Cta />;
-    }
-  }
-  const handlePageChange = (currentTab) => setTab(currentTab);
-  
+  // const [tab, setTab] = useState()
+
+  // const renderTab = () => {
+  //   if (tab === "Moneydash") {
+  //     return <MoneyDash />
+  //   } else if (tab === "Signup") {
+  //     return <Signup />;
+  //   } else if (tab === "Login") {
+  //     return <Login />
+  //   } else if (tab === "New Transactions") {
+  //     return <TransactionPage />
+  //   } else {
+  //     return <Cta />;
+  //   }
+
+
+  // }
+  // const handlePageChange = (currentTab) => setTab(currentTab);
+
   return (
     <ApolloProvider client={client}>
-      <NavTabs 
-        tab = {tab}
-        handlePageChange = {handlePageChange}
-      >
-      </NavTabs>
-      <main>
-        {renderTab()}
-      </main>
+      <Router>
+        <NavTabs />
+
+        <Routes>
+          <Route
+            path="/"
+            element={<Cta />}
+          />
+          <Route
+            path="/Cta"
+            element={<Cta />}
+          />
+          <Route
+            path="/Login"
+            element={<Login />}
+          />
+          <Route
+            path="/Signup"
+            element={<Signup />}
+          />
+          <Route
+            path="/MoneyDash"
+            element={<MoneyDash />}
+          />
+          <Route
+            path="/NewTransactions"
+            element={<TransactionPage />}
+          />
+        </Routes>
+      </Router>
     </ApolloProvider>
+    // <ApolloProvider client={client}>
+    //   <NavTabs
+    //     tab={tab}
+    //     handlePageChange={handlePageChange}
+    //   >
+    //   </NavTabs>
+    //   <main>
+    //     {renderTab()}
+    //   </main>
+    // </ApolloProvider>
   );
 
 }
