@@ -6,6 +6,7 @@ import Spuddy from '../images/Spuddy.png';
 import HappyFamily from '../images/Happyspouses.jpg';
 import logo from '../images/logo.png';
 
+
 const Cta = () => {
     return (
         <section className='sm:w-auto xl:w-auto'>
@@ -71,7 +72,7 @@ const Cta = () => {
                 <div className='xl:bg-gradient-to-r from-stone-400 via-stone-300 to-stone-400 xl:w-auto'>
                     <div className='xl:flex sm:flex sm:flex-col xl:flex-row xl:items-center xl:justify-center'>
                         <div className="flex flex-row">
-                            <img className='xl:m-10 xl:p-5 xl:shadow-xl sm:rounded-full' src={HappyFamily} alt='happy family using spudget'></img>
+                            <img className='xl:m-10 xl:p-5 xl:shadow-xl md:m-10 md:p-5 sm:rounded-full' src={HappyFamily} alt='happy family using spudget'></img>
                         </div>
                         <div className="flex flex-col">
                             <h2 className="m-5 p-5 text-3xl font-bold sm:text-slate-700 xl:text-slate-100 drop-shadow-xl">All of your Spending in one place!</h2>
