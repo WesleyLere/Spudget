@@ -1,5 +1,6 @@
 import React from 'react';
 import auth from '../utils/auth';
+import Spuddy from '../images/logo.png';
 // I want to have the nav bar change when logged in
 // prior to logging in nav bar would show log in and sign up buttons
 //after logging in nav bar would show "dashboard" "import" and "sign out" 
@@ -49,7 +50,7 @@ function NavTabs() {
     <div className="xl:sticky xl:flex-row xl:im xl:top-1 xl:z-50 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl xl:m-10 sm:m-3 text-xl font-semibold sm:flex sm:flex-col sm:items-center">
 
       <div className='flex flex-row justify-start'>
-        <img className='m-2 h-16' src='logo.png' alt='Potato'></img>
+        <img className='m-2 h-16' src={Spuddy} alt='Potato'></img>
       </div>
       <div>
 

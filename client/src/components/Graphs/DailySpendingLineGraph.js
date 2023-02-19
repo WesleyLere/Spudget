@@ -30,7 +30,7 @@ function DailySpendingLineGraph() {
                 name: 'Acumulative Spending',
                 type: 'scatter',
                 mode: 'lines+markers',
-                marker: { color: 'green' },
+                marker: { color: 'blue' },
             },
             {
                 name: 'Daily Spending',
