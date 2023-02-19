@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Spuddy from '../../images/logo.png'
 
 const UploadForm = () => {
     const [file, setFile] = useState();
@@ -97,7 +98,7 @@ const UploadForm = () => {
                             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                 <div class="sm:flex sm:items-start">
                                     <div class="flex flex-shrink-0 items-center justify-center rounded-full">
-                                        <img className='m-2 h-16' src='logo.png'></img>
+                                        <img className='m-2 h-16' src={Spuddy}></img>
                                     </div>
 
 
