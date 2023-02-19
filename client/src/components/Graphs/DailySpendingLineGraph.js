@@ -36,7 +36,8 @@ function DailySpendingLineGraph() {
                 name: 'Daily Spending',
                 type: 'bar',
                 x: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'],
-                y: dailySpending
+                y: dailySpending,
+                bar: { color: 'blue' }
             }
         ]}
             layout={{ autosize: true, title: 'Spuddy says you have spent this much!' }}
