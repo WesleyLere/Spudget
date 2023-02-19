@@ -4,9 +4,9 @@ import RecentSpendingPieChart from "../components/Graphs/RecentSpending/RecentSp
 import RecentSpendingLineChart from '../components/Graphs/RecentSpending/RecentSpendingLineChart';
 import RecentSpendingBarChart from '../components/Graphs/RecentSpending/RecentSpendingBarChart';
 import TotalSpending from "../components/Graphs/TotalSpending"
-import { ADD_LIMIT } from '../../utils/mutations'
-import Auth from '../../utils/auth';
-import { useMutation } from '@apollo/client';
+// import { ADD_LIMIT } from '../../utils/mutations'
+// import Auth from '../../utils/auth';
+// import { useMutation } from '@apollo/client';
 
 
 const MoneyDash = () => {
