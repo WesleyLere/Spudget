@@ -17,6 +17,10 @@ function LoginForm() {
       Auth.login(token);
     } catch (e) {
       console.log(e);
+      
+      if (error) {
+        console.log(error)
+      }
     }
   };
 

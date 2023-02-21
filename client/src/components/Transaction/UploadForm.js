@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Modal } from './Modal';
+import { ADD_TRANSACTION } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 const UploadForm = () => {
+
+
     const [file, setFile] = useState();
     const [category, setCategory] = useState();
     const [date, setDate] = useState('');
@@ -59,6 +63,27 @@ const UploadForm = () => {
         setIsOpen(true);
     }
 
+    const [addTransaction] = useMutation(ADD_TRANSACTION);
+    const importRecipt = async () => {
+        const newdatearray = date.split('-').map((num) =>parseInt(num) )
+        
+        console.log(newdatearray)
+        const { data } = await addTransaction({
+            variables: {
+                year: newdatearray[0],
+                month: newdatearray[1],
+                date: newdatearray[2],
+                category: category,
+                vendor: supplier,
+                amount: totalAmount,
+            },
+        });
+
+
+
+        closeModal()
+    }
+
     return (
         <section className="xl:flex xl:flex-col xl:flex-wrap xl:items-center justify-center xl:m-5 xl:p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
             <h2 className="flex flex-col flex-wrap items-center justify-center text-slate-100 text-5xl m-5 p-5">Upload your Recipets here!</h2>
@@ -67,7 +92,7 @@ const UploadForm = () => {
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
                 <div className='flex-row flex'>
-                    <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                    <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center xl:m-10 sm:m-5 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Upload" />
                     </button>
                     <button onClick={openModal} type="button" className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
@@ -84,14 +109,15 @@ const UploadForm = () => {
 
             </form>
 
-            <Modal 
-                isOpen = {isOpen}
-                closeModal = {closeModal}
-                category = {category}
-                date = {date}
-                supplier = {supplier}
-                totalAmount = {totalAmount}
-                onInputchange = {onInputchange}
+            <Modal
+                importRecipt={importRecipt}
+                isOpen={isOpen}
+                closeModal={closeModal}
+                category={category}
+                date={date}
+                supplier={supplier}
+                totalAmount={totalAmount}
+                onInputchange={onInputchange}
             />
 
         </section>

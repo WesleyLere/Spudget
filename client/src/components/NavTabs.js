@@ -1,30 +1,48 @@
 import React from 'react';
 import auth from '../utils/auth';
 import Spuddy from '../images/logo.png';
-// I want to have the nav bar change when logged in
-// prior to logging in nav bar would show log in and sign up buttons
-//after logging in nav bar would show "dashboard" "import" and "sign out" 
-// not sure how implement that in react. 
+
 function NavTabs() {
 
   function showNavigation() {
     if (auth.loggedIn()) {
       return (<>
 
-        <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+        
+        <div className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
+            <a href='/moneydash'
+
+            >
+              <button className=''>
+                Money Dashboard
+              </button>
+
+            </a>
+          </div>
+
+          <div className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
+            <a href='/newTransactions'
+
+            >
+              <button className=''>
+                New Transactions
+              </button>
+
+            </a>
+          </div>
+          <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
 
             <button className="" onClick={() => auth.logout()}>
               Logout
             </button>
         </div>
-
       </>
       )
     } else {
       return (<>
         <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
 
-          <a href='Login'
+          <a href='/login'
 
           >
             <button className="">
@@ -33,7 +51,7 @@ function NavTabs() {
           </a>
         </div>
         <div className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='Signup'
+          <a href='/signup'
 
           >
             <button className=''>
@@ -56,30 +74,10 @@ function NavTabs() {
 
 
         <nav className="text-neutral-200 justify-center xl:flex xl:flex-row nav nav-tabs sm:flex sm:flex-col sm:justify-between">
-          <div className='flex flex-row'>
+          <div className='flex xl:flex-row sm:flex-col'>
           {showNavigation()}
           </div>
-          <div className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-            <a href='Moneydash'
-
-            >
-              <button className=''>
-                Money Dashboard
-              </button>
-
-            </a>
-          </div>
-
-          <div className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
-            <a href='NewTransactions'
-
-            >
-              <button className=''>
-                New Transactions
-              </button>
-
-            </a>
-          </div>
+          
         </nav>
       </div>
     </div>

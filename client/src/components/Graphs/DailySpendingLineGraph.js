@@ -1,10 +1,10 @@
-import react from 'react'
+import React from 'react'
 import Plot from 'react-plotly.js'
 
 
 function DailySpendingLineGraph() {
     var limit = 1000
-    var dailySpending = [20, 50, 350, 10, 16, 24, 610]
+    var dailySpending = [20, 50, "350", 10, 16, 24, 610]
     var acumulativeSpending = [20, 70, 420, 430, 446, 470, 1080]
     var budget = []
 

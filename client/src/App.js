@@ -64,26 +64,26 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Cta />}
-          />
-          <Route
-            path="/Cta"
-            element={<Cta />}
-          />
-          <Route
-            path="/Login"
-            element={<Login />}
-          />
-          <Route
-            path="/Signup"
-            element={<Signup />}
-          />
-          <Route
-            path="/MoneyDash"
             element={<MoneyDash />}
           />
           <Route
-            path="/NewTransactions"
+            path="/cta"
+            element={<Cta />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          <Route
+            path="/signup"
+            element={<Signup />}
+          />
+          <Route
+            path="/moneyDash"
+            element={<MoneyDash />}
+          />
+          <Route
+            path="/newTransactions"
             element={<TransactionPage />}
           />
         </Routes>

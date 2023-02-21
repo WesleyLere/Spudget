@@ -5,7 +5,7 @@ function RecentSpendingPieChart() {
     return (
         <Plot data={[
             {
-                values: [16, 15, 12, 6, 5, 4, 42],
+                values: ['16', '15', '12', '6', '5', '4', '42'],
                 labels: [
                     "toll",
                     "food",
