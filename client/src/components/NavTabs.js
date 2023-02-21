@@ -1,10 +1,7 @@
 import React from 'react';
 import auth from '../utils/auth';
 import Spuddy from '../images/logo.png';
-// I want to have the nav bar change when logged in
-// prior to logging in nav bar would show log in and sign up buttons
-//after logging in nav bar would show "dashboard" "import" and "sign out" 
-// not sure how implement that in react. 
+
 function NavTabs() {
 
   function showNavigation() {
@@ -13,7 +10,7 @@ function NavTabs() {
 
         
         <div className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-            <a href='moneydash'
+            <a href='/moneydash'
 
             >
               <button className=''>
@@ -24,7 +21,7 @@ function NavTabs() {
           </div>
 
           <div className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
-            <a href='newTransactions'
+            <a href='/newTransactions'
 
             >
               <button className=''>
@@ -45,7 +42,7 @@ function NavTabs() {
       return (<>
         <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
 
-          <a href='login'
+          <a href='/login'
 
           >
             <button className="">
@@ -54,7 +51,7 @@ function NavTabs() {
           </a>
         </div>
         <div className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='signup'
+          <a href='/signup'
 
           >
             <button className=''>

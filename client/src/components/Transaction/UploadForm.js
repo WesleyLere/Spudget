@@ -1,11 +1,11 @@
-import { useMutation } from '@apollo/client';
-import { Token } from 'graphql';
 import React, { useState } from 'react';
 import { Modal } from './Modal';
 import { ADD_TRANSACTION } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 const UploadForm = () => {
-    const [addTransaction] = useMutation(ADD_TRANSACTION);
+
+
     const [file, setFile] = useState();
     const [category, setCategory] = useState();
     const [date, setDate] = useState([]);
@@ -63,19 +63,19 @@ const UploadForm = () => {
         setIsOpen(true);
     }
 
-    const importRecipt = async (event) => {
-        const newdatearray = date.split('-')
+    const [addTransaction] = useMutation(ADD_TRANSACTION);
+    const importRecipt = async () => {
+        const newdatearray = date.split('-').map((num) =>parseInt(num) )
+        
         console.log(newdatearray)
-        const mutationResponse = await addTransaction({
+        const { data } = await addTransaction({
             variables: {
-                transaction: {
-                    category: { name: category },
-                    vendor: supplier,
-                    amount: totalAmount,
-                    year: newdatearray[0],
-                    month: newdatearray[1],
-                    date: newdatearray[2]
-                }
+                year: newdatearray[0],
+                month: newdatearray[1],
+                date: newdatearray[2],
+                category: category,
+                vendor: supplier,
+                amount: totalAmount,
             },
         });
 
@@ -109,14 +109,15 @@ const UploadForm = () => {
 
             </form>
 
-            <Modal 
-                isOpen = {isOpen}
-                closeModal = {closeModal}
-                category = {category}
-                date = {date}
-                supplier = {supplier}
-                totalAmount = {totalAmount}
-                onInputchange = {onInputchange}
+            <Modal
+                importRecipt={importRecipt}
+                isOpen={isOpen}
+                closeModal={closeModal}
+                category={category}
+                date={date}
+                supplier={supplier}
+                totalAmount={totalAmount}
+                onInputchange={onInputchange}
             />
 
         </section>
