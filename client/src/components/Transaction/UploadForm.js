@@ -8,7 +8,7 @@ const UploadForm = () => {
 
     const [file, setFile] = useState();
     const [category, setCategory] = useState();
-    const [date, setDate] = useState([]);
+    const [date, setDate] = useState('');
     const [supplier, setSupplier] = useState('');
     const [totalAmount, setTotalAmount] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
