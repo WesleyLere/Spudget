@@ -13,7 +13,7 @@ function NavTabs() {
         <div className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
             
             
-              <Link to='/moneydash'>
+              <Link to='/dash'>
                 Money Dashboard
               </Link>
 
@@ -53,7 +53,7 @@ function NavTabs() {
         </div>
         <div className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
           
-            <Link to='signup'>
+            <Link to='/signup'>
               Sign Up
             </Link>
 
