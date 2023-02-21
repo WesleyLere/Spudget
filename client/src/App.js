@@ -37,25 +37,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [tab, setTab] = useState()
-
-  // const renderTab = () => {
-  //   if (tab === "Moneydash") {
-  //     return <MoneyDash />
-  //   } else if (tab === "Signup") {
-  //     return <Signup />;
-  //   } else if (tab === "Login") {
-  //     return <Login />
-  //   } else if (tab === "New Transactions") {
-  //     return <TransactionPage />
-  //   } else {
-  //     return <Cta />;
-  //   }
-
-
-  // }
-  // const handlePageChange = (currentTab) => setTab(currentTab);
-
   return (
     <ApolloProvider client={client}>
       <Router>
