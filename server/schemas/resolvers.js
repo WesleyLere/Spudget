@@ -69,7 +69,7 @@ const resolvers = {
       };
 
       // Find the user and add the new transaction to their transactions array
-      const user = await User.findByIdAndUpdate(userId, { $push: { transactions: newTransaction } }, {new: true});
+      const user = await User.findByIdAndUpdate(context.user._id, { $push: { transactions: newTransaction } }, {new: true});
 
       return user;
       }
@@ -77,13 +77,10 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
-    addLimit: async (parent, {month, year, amount, userId}, context) => {
+    addLimit: async (parent, {month, year, amount}, context) => {
       if (context.user) {
           // Find the user
-        const user = await User.findById(userId);
-        if (!user) {
-          throw new Error(`User with ID ${userId} not found`);
-        }
+        const user = await User.findById(context.user._id);
 
         // Create the new limit object
         const newLimit = new Limit({
