@@ -30,14 +30,15 @@ db.once('open', async () => {
         const categoryDocs = categories.map((category) => ({ name: category }));
         const createdCategories = await Category.insertMany(categoryDocs);
 
+        const password = casual.password;
           // Create the user
         const user = await User.create({
             username: casual.username,
             email: casual.email,
-            password: casual.password,
+            password: password,
         });
-        console.log("user", user);
-
+        console.log(`The user, ${user.username}, has this EMAIL:`, user.email);
+        console.log('With this PASSWORD:', password);
         
         for (let i = 0; i < 50; i++) {
             const randomDate = casual.integer(1, 31);
