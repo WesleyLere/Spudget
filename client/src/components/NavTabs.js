@@ -1,6 +1,7 @@
 import React from 'react';
 import auth from '../utils/auth';
 import Spuddy from '../images/logo.png';
+import { Link } from "react-router-dom";
 
 function NavTabs() {
 
@@ -10,25 +11,25 @@ function NavTabs() {
 
         
         <div className="hover:scale-[1.2] hover:text-fuchsia-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-            <a href='/moneydash'
-
-            >
-              <button className=''>
+            
+            
+              <Link to='/moneydash'>
                 Money Dashboard
-              </button>
+              </Link>
 
-            </a>
+            
           </div>
 
           <div className='hover:scale-[1.2] hover:text-teal-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item'>
-            <a href='/newTransactions'
+            
 
-            >
-              <button className=''>
-                New Transactions
-              </button>
+            
+          <Link to='/newTransactions'>
+                Add Transaction
+              </Link>
 
-            </a>
+
+       
           </div>
           <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
 
@@ -42,30 +43,27 @@ function NavTabs() {
       return (<>
         <div className="hover:scale-[1.09] hover:text-amber-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
 
-          <a href='/login'
+         
 
-          >
-            <button className="">
+          
+            <Link to='/login'>
               Login
-            </button>
-          </a>
+            </Link>
+          
         </div>
         <div className="hover:scale-[1.2] hover:text-blue-400 hover:drop-shadow-lg xl:mx-5 xl:mb-5 sm:m-1 p-2 nav-item">
-          <a href='/signup'
-
-          >
-            <button className=''>
+          
+            <Link to='signup'>
               Sign Up
-            </button>
+            </Link>
 
-          </a>
         </div>
       </>)
     }
   }
 
   return (
-    <div className="xl:sticky xl:flex-row xl:im xl:top-1 xl:z-50 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl xl:m-10 sm:m-3 text-xl font-semibold sm:flex sm:flex-col sm:items-center">
+    <div className="xl:sticky xl:flex-row xl:im xl:top-1 xl:z-40 bg-lime-600 flex flex-row justify-center hover:shadow-inner rounded-3xl xl:m-10 sm:m-3 text-xl font-semibold sm:flex sm:flex-col sm:items-center">
 
       <div className='flex flex-row justify-start'>
         <img className='m-2 h-16' src={Spuddy} alt='Potato'></img>

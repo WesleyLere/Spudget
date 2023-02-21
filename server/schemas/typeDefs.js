@@ -17,8 +17,6 @@ const typeDefs = gql`
 
   type Limit {
     _id: ID
-    month: Int
-    year: Int
     amount: Int
   }
 
@@ -43,7 +41,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addTransaction(date: Int!, month: Int!, year: Int!, amount: Float!, vendor: String, category: String!): User
-    addLimit(month: Int!, year: Int!, amount: Int!): User
+    addLimit( amount: Int!): User
     login(email: String!, password: String!): Auth
   }
 `;
