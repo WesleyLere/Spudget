@@ -1,38 +1,76 @@
-const userSeeds = require('../seeders/UserSeed.json');
+const casual = require('casual');
 const db = require('../config/connection');
-const User = require ('../models/User');
-const Category = require('../models/Category');
-const categorySeeds = require('../seeders/categorySeeds');
+const {User, Category, Limit} = require ('../models');
 
+const categories = [
+    "toll",
+    "food",
+    "parking",
+    "transport",
+    "accommodation",
+    "gasoline",
+    "telecom",
+    "miscellaneous"
+  ];
+
+db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', async () => {
+
     try {
-        await User.deleteMany();
-        await Category.deleteMany();
+        console.log('Connected to database');
 
-        const purchase = await Category.insertMany(categorySeeds)
-        console.log(purchase)
-        console.log(userSeeds)
-        userSeeds.forEach(userData => { //users data loop
-            // console.log(userData)
-            userData.transactions.forEach(transactionData => { //looping through transactions data
-                console.log(transactionData.category)
-                const c = transactionData.category 
+        // Clear the database
+        await User.deleteMany({});
+        await Category.deleteMany({});
+        await Limit.deleteMany({});
 
-                purchase.forEach(categoryData => { //looking for category data
-                    if (c == categoryData.name) {
-                        transactionData.category = categoryData._id
-                    } 
-                })
-console.log(transactionData)
-            }) 
+        console.log('Database cleared');
+
+        // Create the categories
+        const categoryDocs = categories.map((category) => ({ name: category }));
+        const createdCategories = await Category.insertMany(categoryDocs);
+
+          // Create the user
+        const user = await User.create({
+            username: casual.username,
+            email: casual.email,
+            password: casual.password,
+        });
+        console.log("user", user);
+
+        
+        for (let i = 0; i < 50; i++) {
+            const randomDate = casual.integer(1, 31);
+            // const randomMonth = casual.integer(1, 2);
+            const randomAmount = Number(casual.double(1, 1000).toFixed(2));
+            const randomVendor = casual.company_name;
+            const randomCategoryIndex = casual.integer(0, 7);
+
+            const transaction = {
+            date: randomDate,
+            month: 1,
+            year: 2023,
+            amount: randomAmount,
+            vendor: randomVendor,
+            category: createdCategories[randomCategoryIndex]._id,
+            };
+
+            user.transactions.push(transaction);
+        }
+
+        const createdLimit = await Limit.create({
+            amount: casual.integer(3000, 4000),
         })
-        console.log(userSeeds)
-        await User.create(userSeeds)
+
+        user.limits.push(createdLimit._id);
+
+        await user.save();
+
     } catch (err) {
         console.error(err);
         process.exit(1);
-      }
-    
-      console.log('all done!');
-      process.exit(0);
+    }
+
+    console.log('all done!');
+    process.exit(0);
 });
