@@ -1,10 +1,14 @@
+import { useMutation } from '@apollo/client';
+import { Token } from 'graphql';
 import React, { useState } from 'react';
 import Spuddy from '../../images/logo.png'
+import { ADD_TRANSACTION } from '../../utils/mutations';
 
 const UploadForm = () => {
+    const [addTransaction] = useMutation(ADD_TRANSACTION);
     const [file, setFile] = useState();
     const [category, setCategory] = useState();
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState([]);
     const [supplier, setSupplier] = useState('');
     const [totalAmount, setTotalAmount] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
@@ -58,10 +62,24 @@ const UploadForm = () => {
         setIsOpen(true);
     }
 
-    function importRecipt() {
-        
-        console.log(FormData)
-        
+    const importRecipt = async (event) => {
+        const newdatearray = date.split('-')
+        console.log(newdatearray)
+        const mutationResponse = await addTransaction({
+            variables: {
+                transaction: {
+                    category: { name: category },
+                    vendor: supplier,
+                    amount: totalAmount,
+                    year: newdatearray[0],
+                    month: newdatearray[1],
+                    date: newdatearray[2]
+                }
+            },
+        });
+
+
+
         closeModal()
     }
 
@@ -73,10 +91,10 @@ const UploadForm = () => {
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
                 <div className='flex-row flex'>
-                    <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                    <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center xl:m-10 sm:m-5 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Upload" />
                     </button>
-                    <button onClick={openModal} className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                    <button onClick={openModal} className='text-3xl flex flex-col flex-wrap items-center justify-center xl:m-10 sm:m-5 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Manual Entry" onClick={submitFile} />
                     </button>
                 </div>
@@ -131,7 +149,7 @@ const UploadForm = () => {
                                                 <div className='text-xl m-5'>
                                                     <h1 className="text-lime-600">Place of Purchase</h1>
                                                     <input className="bg-slate-200 rounded-full " id="supplier" type="text" name="supplier" value={supplier} onChange={onInputchange}></input>
-                                                </div> 
+                                                </div>
 
 
                                                 <div className='text-xl m-5'>
