@@ -45,11 +45,11 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<MoneyDash />}
+            element={<Cta />}
           />
           <Route
-            path="/cta"
-            element={<Cta />}
+            path="/dash"
+            element={<MoneyDash />}
           />
           <Route
             path="/login"
