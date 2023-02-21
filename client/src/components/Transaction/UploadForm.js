@@ -80,8 +80,8 @@ const UploadForm = () => {
         });
 
 
-
         closeModal()
+        setFile('')
     }
 
     return (

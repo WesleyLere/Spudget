@@ -77,15 +77,14 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
-    addLimit: async (parent, {month, year, amount}, context) => {
+    addLimit: async (parent, { amount}, context) => {
       if (context.user) {
           // Find the user
         const user = await User.findById(context.user._id);
 
         // Create the new limit object
         const newLimit = new Limit({
-            month,
-            year,
+           
             amount,
           }
         ) 
