@@ -41,8 +41,8 @@ function recentSpending() {
                 <h2 className="text-xl m-1">Enter spending limit here:</h2>
             <form className="">
                 <input className="bg-slate-300 rounded-full " type="text"></input>
-                <button className='text-md p-2 m-1 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
-                        <input className="cursor-pointer" type="button" value="Submit"/>
+                <button className='text-md font-bold p-2 m-1 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300' type="button">
+                        Sumbit
                     </button>
             </form>
             </div>

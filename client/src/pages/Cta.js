@@ -9,43 +9,43 @@ import logo from '../images/logo.png';
 
 const Cta = () => {
     return (
-        <section className='sm:w-auto xl:w-auto'>
+        <section className='w-auto'>
            <div className="bg-slate-300 p-5 shadow-inner flex flex-col items-center text-center justify-start">
-                <h1 className='drop-shadow-xl sm:text-xl sm:m-1 sm:p-5 xl:text-8xl xl:font-bold xl:m-8 xl:p-5 flex flex-wrap text-center justify-start text-slate-400'>This is SPUDGET.<br></br>Your one stop spending and budgeting app.</h1>
+                <h1 className='drop-shadow-xl sm:text-2xl sm:m-1 sm:p-1 md:text-4xl md:font-bold md:m-4 md:p-3 lg:text-5xl xl:text-6xl xl:font-bold xl:m-8 xl:p-5 2xl:text-8xl 2xl:font-bold 2xl:m-8 2xl:p-5 flex flex-wrap text-center justify-start text-slate-400'>This is SPUDGET.<br></br>Your one stop spending and budgeting app.</h1>
             </div>
-            <div className='w-full h-1/4 xl:p-20 xl:h-screen sm:p-5 xl:bg-gradient-to-t from-lime-600 to-lime-500 xl:flex xl:flex-row xl:items-center xl:justify-center'>
+            <div className='w-full h-1/4 xl:p-20 sm:p-5 xl:bg-gradient-to-t from-lime-600 to-lime-500 xl:flex xl:flex-row xl:items-center xl:justify-center'>
 
-                <div className="w-full h-3/4 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Keep Track of your Spending</h2>
-                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img className="w-full h-3/4" src={sampleGraph} alt="sample graph"></img>
+                <div className="w-full h-96 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-500 rounded-3xl xl:border-4 2xl:border-4 xl:border-lime-500 xl:m-5 2xl:m-10 2xl:p-10 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center 2xl:mx-auto xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center 2xl:text-center 2xl:text-4xl xl:text-4xl sm:text-center 2xl:mt-5 xl:mt-5 2xl:pt-5 xl:pt-5 sm:m-1 sm:p-1">Keep Track of your Spending</h2>
+                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10 h-3/4">
+                        <img className="xl:max-h-24 2xl:max-h-48 md:max-h-48 w-full" src={sampleGraph} alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div className="w-full h-3/4 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                <div className="w-full h-96 xl:object-cover 2xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-500 rounded-3xl xl:border-4 2xl:border-4 xl:border-lime-500 xl:m-5 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center 2xl:mx-auto xl:mx-auto xl:max-w-6xl">
                     <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Import your Reciepts!</h2>
-                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img className="w-full h-3/4" src={Phone} alt="sample graph"></img>
+                    <div className="xl:m-5 2xl:m-10 2xl:p-1 xl:p-5 sm:m-10 sm:p-10 2xl:h-3/4 h-3/4">
+                        <img className="xl:max-h-24 2xl:max-h-48 md:max-h-48 w-full" src={Phone} alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div className="w-full h-3/4 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-16 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">Watch your savings grow!</h2>
-                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img className="w-full h-3/4" src={Savings} alt="sample graph"></img>
+                <div className="w-full h-96 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-5 xl:p-16 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center sm:m-1 sm:p-1">Watch your savings grow!</h2>
+                    <div className="xl:m-1 xl:p-1 sm:m-10 sm:p-10 h-3/4">
+                        <img className="xl:max-h-24 2xl:max-h-48 md:max-h-48 w-full" src={Savings} alt="sample graph"></img>
                     </div>
                 </div>
 
-                <div className="w-full h-3/4 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-10 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
-                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">We Also Have a Potato as a Mascot.<br></br> His name is Spuddy</h2>
-                    <div className="xl:m-5 xl:p-5 sm:m-10 sm:p-10">
-                        <img className="w-full h-3/4 xl:mt-30 xl:mb-5 xl:p-10 xl:hover:rotate-6" src={Spuddy} alt="sample graph"></img>
+                <div className="w-full h-96 xl:object-cover xl:bg-slate-300 xl:hover:bg-slate-100 sm:bg-slate-400 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-10 xl:p-5 sm:m-1 sm:p-1 hover:drop-shadow-xl hover:scale-[1.04] transition ease-out duration-300 sm:flex sm:flex-col sm:items-center xl:mx-auto xl:max-w-6xl">
+                    <h2 className="sm:text-2xl xl:text-center xl:text-4xl sm:text-center xl:mt-5 xl:pt-5 sm:m-1 sm:p-1">We Also Have a Potato as a Mascot.</h2>
+                    <div className="xl:m-5 xl:p-5 sm:m-16 sm:p-4">
+                        <img className="xl:max-h-24 2xl:max-h-48 md:max-h-48 w-full xl:hover:rotate-6" src={Spuddy} alt="sample graph"></img>
                     </div>
                 </div>
 
             </div>
             <div className="bg-slate-200 p-5 shadow-inner flex flex-col items-center text-center justify-start">
-                <h1 className='drop-shadow-xl sm:text-xl sm:m-1 sm:p-5 xl:text-8xl xl:font-bold xl:m-8 xl:p-5 flex flex-wrap text-center justify-start text-slate-400'>Used By Companies and People all over the World</h1>
+                <h1 className='drop-shadow-xl sm:text-xl sm:m-1 sm:p-5 2xl:text-8xl xl:text-6xl xl:font-bold xl:m-8 xl:p-5 flex flex-wrap text-center justify-start text-slate-400'>Used By Companies and People all over the World</h1>
             </div>
 
 
@@ -89,8 +89,8 @@ const Cta = () => {
             <React.Fragment>
                 <section className='text-2xl bg-gradient-to-b from-lime-600 to-lime-500'>
                     <div className='xl:flex xl:flex-row xl:justify-evenly md:flex md:flex-row md:justify-evenly'>
-                        <div className='xl:flex xl:justify-center'>
-                            <img className='xl:p-5 xl:m-5 md:flex md:flex-row md:justify-evenly' src={logo} alt=''></img>
+                        <div className='flex justify-center'>
+                            <img className='p-5 m-5 md:flex md:flex-row md:justify-evenly' src={logo} alt=''></img>
                         </div>
                         <div className='m-10 p-10 flex flex-col items-center justify-center'>
                             <h2 className='flex-1 text-white'>Contact Us</h2>
