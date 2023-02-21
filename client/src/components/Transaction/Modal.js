@@ -15,7 +15,7 @@ export function Modal({
    
 
     return (
-        <div className={`relative z-10 ${isOpen ? '' : 'hidden'}`}>
+        <div className={`relative z-50 ${isOpen ? '' : 'hidden'}`}>
             <div className="sm:flex sm:flex-wrap sm:flex-col sm:p-1 fixed inset-0 z-10 overflow-y-auto">
                 <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
 

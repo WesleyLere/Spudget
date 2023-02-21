@@ -44,14 +44,12 @@ export const ADD_TRANSACTION = gql`
 `;
 
 export const ADD_LIMIT = gql`
-    mutation addLimit($month: Int!, $year: Int!, $amount: Int!) {
-    addLimit(month: $month, year: $year, amount: $amount) {
+    mutation addLimit( $amount: Int!) {
+    addLimit(amount: $amount) {
       _id
       username
       limits {
         _id
-        month
-        year
         amount
       }
     }

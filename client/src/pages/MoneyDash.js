@@ -4,34 +4,50 @@ import RecentSpendingPieChart from "../components/Graphs/RecentSpending/RecentSp
 import RecentSpendingLineChart from '../components/Graphs/RecentSpending/RecentSpendingLineChart';
 import RecentSpendingBarChart from '../components/Graphs/RecentSpending/RecentSpendingBarChart';
 import TotalSpending from "../components/Graphs/TotalSpending"
-// import { ADD_LIMIT } from '../../utils/mutations'
+import { ADD_LIMIT } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 // import Auth from '../../utils/auth';
-// import { useMutation } from '@apollo/client';
 
 
 const MoneyDash = () => {
-   const [button, setButton] = useState('pie');
+    const [limit, setLimit] = useState()
+    function handleLimitChange(event) {
+        setLimit(parseInt(event.target.value))
 
-function buttonPie() {
-    setButton('pie')
-}
-function buttonLine() {
-    setButton('line')
-}
-function buttonBar() {
-    setButton('bar')
-}
-
-function recentSpending() {
-    
-    if (button === 'pie') {
-        return <RecentSpendingPieChart/>
-    } else if (button ==='line') {
-        return <RecentSpendingLineChart/>
-    }else if (button ==='bar'){
-        return <RecentSpendingBarChart/>
     }
-}
+    const [addLimit] = useMutation(ADD_LIMIT)
+    const budgetLimit = async () => {
+        console.log(limit)
+        const { data } = await addLimit({
+            variables: {
+                amount: limit,
+            },
+        });
+
+    }
+
+    const [button, setButton] = useState('pie');
+
+    function buttonPie() {
+        setButton('pie')
+    }
+    function buttonLine() {
+        setButton('line')
+    }
+    function buttonBar() {
+        setButton('bar')
+    }
+
+    function recentSpending() {
+
+        if (button === 'pie') {
+            return <RecentSpendingPieChart />
+        } else if (button === 'line') {
+            return <RecentSpendingLineChart />
+        } else if (button === 'bar') {
+            return <RecentSpendingBarChart />
+        }
+    }
 
     return (
         <section className="flex flex-row flex-wrap items-center justify-center p-5 bg-gradient-to-t from-lime-600 to-lime-500 sm:bg-gradient-to-r sm:from-lime-400 sm:to-lime-700 sm:flex sm:flex-col sm:items-center sm:overflow-auto touch-auto">
@@ -39,15 +55,13 @@ function recentSpending() {
 
             <div className="flex flex-col items-center justify-center bg-slate-100 rounded-2xl mb-5 p-5 shadow-xl">
                 <h2 className="text-xl m-1">Enter spending limit here:</h2>
-            <form className="">
-                <input className="bg-slate-300 rounded-full " type="text"></input>
-                <button className='text-md font-bold p-2 m-1 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300' type="button">
-                        Sumbit
-                    </button>
-            </form>
+                <form className="">
+                    <input className="bg-slate-300 rounded-full " onChange={handleLimitChange} type="number"></input>
+                    <button onClick={budgetLimit} type="button" className='text-md p-2 m-1 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>Submit</button>
+                </form>
             </div>
-            
-            
+
+
             <div className="flex flex-row flex-wrap  items-center justify-center rounded-2xl border-4 shadow-2xl">
 
 
@@ -75,13 +89,13 @@ function recentSpending() {
                         </div>
                         <div className="sm:overflow-auto touch-auto sm:touch-pan-down sm:m-10 sm:p-10" id="graph">
 
-                        <DailySpendingLineGraph/>
-                           
+                            <DailySpendingLineGraph />
+
                         </div>
 
                     </div>
                 </container>
-                
+
                 <container className="flex flex-row flex-wrap  items-center justify-center">
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Recent Spending Habits</h1>
@@ -93,13 +107,13 @@ function recentSpending() {
                         </div>
                     </div>
                 </container>
-              
+
 
                 <container className="flex flex-row flex-wrap  items-center justify-center">
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
-                            <TotalSpending/>
+                            <TotalSpending />
                         </div>
 
                     </div>
