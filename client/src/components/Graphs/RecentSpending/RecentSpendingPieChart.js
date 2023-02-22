@@ -16,8 +16,7 @@ function RecentSpendingPieChart() {
                     "telecom",
                     "miscellaneous"],
                 domain: { column: 0 },
-                name: 'expense',
-                hoverinfo: 'label+percent+name',
+                hoverinfo: 'label+percent',
                 hole: .4,
                 type: 'pie'
             },

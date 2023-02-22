@@ -40,10 +40,10 @@ db.once('open', async () => {
         console.log(`The user, ${user.username}, has this EMAIL:`, user.email);
         console.log('With this PASSWORD:', password);
         
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 20; i++) {
             const randomDate = casual.integer(1, 31);
             // const randomMonth = casual.integer(1, 2);
-            const randomAmount = Number(casual.double(1, 1000).toFixed(2));
+            const randomAmount = Number(casual.double(1, 500).toFixed(2));
             const randomVendor = casual.company_name;
             const randomCategoryIndex = casual.integer(0, 7);
 
