@@ -78,12 +78,12 @@ const MoneyDash = () => {
 
             <div className="flex flex-row flex-wrap  items-center justify-center rounded-2xl border-4 shadow-2xl">
 
-                <container className='flex flex-row flex-wrap items-center justify-center '>
+                <section className='flex flex-row flex-wrap items-center justify-center '>
                     <div className="inner-shadow-2xl xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <div className="">
                             <h2 className="">
                                 This Months Spending:
-                                <select onChange={handleMonthChange} className="" id="month" name="month">
+                                <select onChange={handleMonthChange} value={month} className="" id="month" name="month">
                                     <option>month</option>
                                     <option value="1">January</option>
                                     <option value="2">February</option>
@@ -111,9 +111,9 @@ const MoneyDash = () => {
                         </div>
 
                     </div>
-                </container>
+                </section>
 
-                <container className="flex flex-row flex-wrap  items-center justify-center">
+                <section className="flex flex-row flex-wrap  items-center justify-center">
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Recent Spending Habits</h1>
                         {recentSpending()}
@@ -123,10 +123,10 @@ const MoneyDash = () => {
                             <button onClick={buttonLine} className='bg-green-700 hover:scale-[1.04] transition ease-out duration-300 xl:hover:bg-purple-600  hover:text-amber-400 hover:drop-shadow-lg rounded-3xl xl:m-5 xl:p-5 sm:m-10 sm:p-10'><h3>Line</h3></button>
                         </div>
                     </div>
-                </container>
+                </section>
 
 
-                <container className="flex flex-row flex-wrap  items-center justify-center">
+                <section className="flex flex-row flex-wrap  items-center justify-center">
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
@@ -137,7 +137,7 @@ const MoneyDash = () => {
                         </div>
 
                     </div>
-                </container>
+                </section>
             </div>
 
         </section>

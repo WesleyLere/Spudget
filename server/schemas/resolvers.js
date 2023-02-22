@@ -120,16 +120,17 @@ const resolvers = {
       if (context.user) {
           // Find the user
         const user = await User.findById(context.user._id);
-
+        
         // Create the new limit object
-        const newLimit = new Limit({
+        const newLimit = await Limit.create({
            
             amount,
           }
-        ) 
+        )
 
         // Add the new limit to the user's limits array
-        user.limits.unshift(newLimit);
+        user.limits.pop()
+        user.limits.push(newLimit._id);
         await user.save();
 
         return user;

@@ -34,7 +34,7 @@ export function Modal({
                                         <form className="bg-slate-100 rounded-2xl">
                                             <div className='text-xl m-5 p-5'>
                                                 <select value={category} onChange={onInputchange} className=" bg-slate-300 rounded-full" htmlFor="category" id="category" type="dropdown" name="category" defaultValue="" >
-                                                    <option className="" value="" disabled>Categories</option>
+                                                    <option className="" value="none" disabled>Categories</option>
                                                     <option className="" value="toll">Toll</option>
                                                     <option className="" value="food">Food</option>
                                                     <option className="" value="parking">Parking</option>
