@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Plot from 'react-plotly.js'
 
 
@@ -10,12 +10,13 @@ function DailySpendingLineGraph() {
 
     for (let i = 0; i < dailySpending.length; i++) {
         budget = budget.concat(limit)
-        
     }
 
+    
     return (
 
         <Plot data={[
+            
             {
                 x: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'],
                 y: budget,
