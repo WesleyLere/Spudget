@@ -4,7 +4,6 @@ import RecentSpendingPieChart from "../components/Graphs/RecentSpending/RecentSp
 import RecentSpendingLineChart from '../components/Graphs/RecentSpending/RecentSpendingLineChart';
 import RecentSpendingBarChart from '../components/Graphs/RecentSpending/RecentSpendingBarChart';
 import TotalSpending from "../components/Graphs/TotalSpending"
-import spinner from "../assets/spinner.gif"
 import { ADD_LIMIT } from '../utils/mutations';
 import { QUERY_TRANSACTIONS } from '../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
