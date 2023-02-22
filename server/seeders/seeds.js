@@ -43,7 +43,7 @@ db.once('open', async () => {
         for (let i = 0; i < 20; i++) {
             const randomDate = casual.integer(1, 31);
             // const randomMonth = casual.integer(1, 2);
-            const randomAmount = Number(casual.double(1, 500).toFixed(2));
+            const randomAmount = Number(casual.double(1, 400).toFixed(2));
             const randomVendor = casual.company_name;
             const randomCategoryIndex = casual.integer(0, 7);
 

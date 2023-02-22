@@ -6,12 +6,13 @@ import { useMutation } from '@apollo/client';
 const UploadForm = () => {
 
 
-    const [file, setFile] = useState();
-    const [category, setCategory] = useState();
+    const [file, setFile] = useState('');
+    const [category, setCategory] = useState('none');
     const [date, setDate] = useState('');
     const [supplier, setSupplier] = useState('');
     const [totalAmount, setTotalAmount] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     function handleFile(event) {
         setFile(event.target.files[0])
@@ -26,7 +27,7 @@ const UploadForm = () => {
         } else if (event.target.name === "supplier") {
             setSupplier(event.target.value);
         } else {
-            setTotalAmount(event.target.value)
+            setTotalAmount(parseFloat(event.target.value))
         }
     }
 
@@ -56,6 +57,10 @@ const UploadForm = () => {
     }
 
     const closeModal = () => {
+        setCategory('none');
+        setDate('');
+        setSupplier('');
+        setTotalAmount('');
         setIsOpen(false);
     }
 
@@ -64,10 +69,11 @@ const UploadForm = () => {
     }
 
     const [addTransaction] = useMutation(ADD_TRANSACTION);
-    const importRecipt = async () => {
+    const importReceipt = async () => {
         const newdatearray = date.split('-').map((num) =>parseInt(num) )
         
         console.log(newdatearray)
+        console.log(category, supplier, totalAmount )
         const { data } = await addTransaction({
             variables: {
                 year: newdatearray[0],
@@ -79,7 +85,8 @@ const UploadForm = () => {
             },
         });
 
-
+        if (data) setSuccess(true);
+        
         closeModal()
         setFile('')
     }
@@ -91,6 +98,7 @@ const UploadForm = () => {
                 <div className="rounded-3xl text-xl flex flex-col flex-wrap items-center justify-center drop-shadow-2xl bg-green-600 m-10 p-5">
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
+                {success && (<div className='flex-row flex'>Your New Transaction Is Saved!</div>)}
                 <div className='flex-row flex'>
                     <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center xl:m-10 sm:m-5 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Upload" />
@@ -110,7 +118,7 @@ const UploadForm = () => {
             </form>
 
             <Modal
-                importRecipt={importRecipt}
+                importReceipt={importReceipt}
                 isOpen={isOpen}
                 closeModal={closeModal}
                 category={category}
