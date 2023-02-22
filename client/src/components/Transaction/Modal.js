@@ -35,14 +35,14 @@ export function Modal({
                                             <div className='text-xl m-5 p-5'>
                                                 <select className=" bg-slate-300 rounded-full" htmlFor="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
                                                     <option className="" value="" disabled>Categories</option>
-                                                    <option className="" value="Toll">Toll</option>
-                                                    <option className="" value="Food">Food</option>
-                                                    <option className="" value="Parking">Parking</option>
-                                                    <option className="" value="Transport">Transport</option>
-                                                    <option className="" value="Accommodation">Accommodation</option>
-                                                    <option className="" value="Gasoline">Gasoline</option>
-                                                    <option className="" value="Telecom">Telecom</option>
-                                                    <option className="" value="Miscellaneaous">Miscellaneaous</option>
+                                                    <option className="" value="toll">Toll</option>
+                                                    <option className="" value="food">Food</option>
+                                                    <option className="" value="parking">Parking</option>
+                                                    <option className="" value="transport">Transport</option>
+                                                    <option className="" value="accommodation">Accommodation</option>
+                                                    <option className="" value="gasoline">Gasoline</option>
+                                                    <option className="" value="telecom">Telecom</option>
+                                                    <option className="" value="miscellaneaous">Miscellaneaous</option>
                                                 </select>
 
                                             </div>
