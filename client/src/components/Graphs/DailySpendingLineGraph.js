@@ -1,33 +1,28 @@
 import React, { useEffect } from 'react'
 import Plot from 'react-plotly.js'
-
-
-function DailySpendingLineGraph() {
-    var limit = 1000
-    var dailySpending = [20, 50, "350", 10, 16, 24, 610]
-    var acumulativeSpending = [20, 70, 420, 430, 446, 470, 1080]
-    var budget = []
-
-    for (let i = 0; i < dailySpending.length; i++) {
-        budget = budget.concat(limit)
-    }
-
     
+function DailySpendingLineGraph({limitAmount, dailySpending, accumulativeSpending}) {
+    const dailyArr = dailySpending.map((spending) => spending.amount)
+    const accArr = accumulativeSpending.map((spending) => spending.amount)
+    const dayArr = dailySpending.map((spending) => spending.date)
+    const limits = [];
+    for (let i = 0; i < dailySpending.length; i++) {
+        limits.push(limitAmount)
+    }
     return (
 
         <Plot data={[
             
             {
-                x: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'],
-                y: budget,
+                x: dayArr,
+                y: limits,
                 name: 'Budget Limit',
                 type: 'scatter',
                 mode: 'lines',
                 line: { color: 'red'},
             },
             {
-                x: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'],
-                y: acumulativeSpending,
+                y: accArr,
                 name: 'Acumulative Spending',
                 type: 'scatter',
                 mode: 'lines+markers',
@@ -36,8 +31,7 @@ function DailySpendingLineGraph() {
             {
                 name: 'Daily Spending',
                 type: 'bar',
-                x: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'],
-                y: dailySpending,
+                y: dailyArr,
                 bar: { color: 'blue' }
             }
         ]}
