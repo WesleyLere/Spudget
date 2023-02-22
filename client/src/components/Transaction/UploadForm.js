@@ -64,7 +64,7 @@ const UploadForm = () => {
     }
 
     const [addTransaction] = useMutation(ADD_TRANSACTION);
-    const importRecipt = async () => {
+    const importReceipt = async () => {
         const newdatearray = date.split('-').map((num) =>parseInt(num) )
         
         console.log(newdatearray)
@@ -110,7 +110,7 @@ const UploadForm = () => {
             </form>
 
             <Modal
-                importRecipt={importRecipt}
+                importReceipt={importReceipt}
                 isOpen={isOpen}
                 closeModal={closeModal}
                 category={category}

@@ -10,7 +10,7 @@ export function Modal({
     supplier,
     totalAmount,
     onInputchange,
-    importRecipt
+    importReceipt
 }) {
    
 
@@ -33,7 +33,7 @@ export function Modal({
 
                                         <form className="bg-slate-100 rounded-2xl">
                                             <div className='text-xl m-5 p-5'>
-                                                <select className=" bg-slate-300 rounded-full" htmlFor="category" id="category" type="dropdown" name="category" defaultValue="" value={category} onChange={onInputchange}>
+                                                <select value={category} onChange={onInputchange} className=" bg-slate-300 rounded-full" htmlFor="category" id="category" type="dropdown" name="category" defaultValue="" >
                                                     <option className="" value="" disabled>Categories</option>
                                                     <option className="" value="toll">Toll</option>
                                                     <option className="" value="food">Food</option>
@@ -71,7 +71,7 @@ export function Modal({
                             </div>
                         </div>
                         <div className="flex flex-row justify-center bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                            <button onClick={importRecipt} type="button" className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Import Transaction</button>
+                            <button onClick={importReceipt} type="button" className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-lime-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Import Transaction</button>
                             <button onClick={closeModal} type="button" className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                         </div>
                     </div>

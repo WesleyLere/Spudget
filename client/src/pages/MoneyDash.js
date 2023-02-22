@@ -4,6 +4,7 @@ import RecentSpendingPieChart from "../components/Graphs/RecentSpending/RecentSp
 import RecentSpendingLineChart from '../components/Graphs/RecentSpending/RecentSpendingLineChart';
 import RecentSpendingBarChart from '../components/Graphs/RecentSpending/RecentSpendingBarChart';
 import TotalSpending from "../components/Graphs/TotalSpending"
+import spinner from "../assets/spinner.gif"
 import { ADD_LIMIT } from '../utils/mutations';
 import { QUERY_TRANSACTIONS } from '../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
@@ -50,21 +51,18 @@ const MoneyDash = () => {
         }
     }
 
+    const currentMonth = new Date().getMonth() + 1;
+    const [month, setMonth] = useState(currentMonth)
+
+    function handleMonthChange(event) {
+        setMonth(event.target.value)
+    }
+
     const {loading, data} = useQuery(QUERY_TRANSACTIONS, {
         variables: {
-            month: 1
+            month: parseInt(month)
         }
     })
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-    console.log("🚀 ~ file: MoneyDash.js:58 ~ MoneyDash ~ loading:", loading)
-    console.log("🚀 ~ file: MoneyDash.js:59 ~ MoneyDash ~ data:", data)
-    const limitAmount = data.transactionByMonth.limit;
-    const dailySpending = data.transactionByMonth.dailySpending;
-    const accumulativeSpending = data.transactionByMonth.accumulativeSpending;
-    const monthlyTotal = data.transactionByMonth.monthlyTotal;
     
     return (
         <section className="flex flex-row flex-wrap items-center justify-center p-5 bg-gradient-to-t from-lime-600 to-lime-500 sm:bg-gradient-to-r sm:from-lime-400 sm:to-lime-700 sm:flex sm:flex-col sm:items-center sm:overflow-auto touch-auto">
@@ -81,36 +79,35 @@ const MoneyDash = () => {
 
             <div className="flex flex-row flex-wrap  items-center justify-center rounded-2xl border-4 shadow-2xl">
 
-
                 <container className='flex flex-row flex-wrap items-center justify-center '>
                     <div className="inner-shadow-2xl xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <div className="">
                             <h2 className="">
                                 This Months Spending:
-                                <select className="" id="month" name="month">
+                                <select onChange={handleMonthChange} className="" id="month" name="month">
                                     <option>month</option>
-                                    <option value="january">January</option>
-                                    <option value="february">February</option>
-                                    <option value="march">March</option>
-                                    <option value="april">April</option>
-                                    <option value="may">May</option>
-                                    <option value="june">June</option>
-                                    <option value="july">July</option>
-                                    <option value="august">August</option>
-                                    <option value="september">September</option>
-                                    <option value="october">October</option>
-                                    <option value="november">November</option>
-                                    <option value="december">December</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12  ">December</option>
                                 </select>
                             </h2>
                         </div>
                         <div className="sm:overflow-auto touch-auto sm:touch-pan-down sm:m-10 sm:p-10" id="graph">
 
-                            <DailySpendingLineGraph 
-                                limitAmount={limitAmount}
-                                dailySpending={dailySpending}
-                                accumulativeSpending={accumulativeSpending}
-                            />
+                            {!loading ? (<DailySpendingLineGraph 
+                                limitAmount={data.transactionByMonth.limit}
+                                dailySpending={data.transactionByMonth.dailySpending}
+                                accumulativeSpending={data.transactionByMonth.accumulativeSpending}
+                            />) : null}
 
                         </div>
 
@@ -134,10 +131,10 @@ const MoneyDash = () => {
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
-                            <TotalSpending 
-                                limit={limitAmount}
-                                monthlyTotal={monthlyTotal}
-                            />
+                            {!loading ? (<TotalSpending 
+                                limit={data.transactionByMonth.limit}
+                                monthlyTotal={data.transactionByMonth.monthlyTotal}
+                            />) : null}
                         </div>
 
                     </div>

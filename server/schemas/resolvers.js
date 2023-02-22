@@ -26,10 +26,21 @@ const resolvers = {
         // Find User
         const user = await User.findById(context.user._id).populate('limits');
         // const user = await User.findById(userId).populate("limits");
+
+        const limit = user.limits[0].amount;
         // Save transactions that match "month" into transactions
         const transactions = user.transactions.filter((transaction) => {
           return transaction.month === month;
         });
+        
+        if (!transactions) {
+          return {
+            dailySpending: [],
+            accumulativeSpending: [],
+            monthlyTotal: 0,
+            limit: limit
+          }
+        }
         
         // days in the "month"
         const monthDays = new Date(user.transactions[0].year, month, 0).getDate();
@@ -55,8 +66,6 @@ const resolvers = {
         
         // Sort in ascending order of date
         dailySpending.sort((a, b) => a.date - b.date);
-    
-        const limit = user.limits[0].amount;
     
         return {
           dailySpending,
@@ -120,7 +129,7 @@ const resolvers = {
         ) 
 
         // Add the new limit to the user's limits array
-        user.limits.push(newLimit);
+        user.limits.unshift(newLimit);
         await user.save();
 
         return user;
