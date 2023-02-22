@@ -1,20 +1,20 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_TRANSACTIONS = gql`
-  query getTransactions($month: Int!) {
+  query TransactionByMonth($month: Int!) {
     transactionByMonth(month: $month) {
-      _id
-      date
-      month
-      year
-      amount
-      vendor
-      category {
-        _id
-        name
+      dailySpending {
+        date
+        amount
       }
+      accumulativeSpending {
+        date
+        amount
+      }
+      monthlyTotal
+      limit
     }
-  }
+}
 `;
 
 export const QUERY_USER = gql`

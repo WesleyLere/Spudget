@@ -5,7 +5,8 @@ import RecentSpendingLineChart from '../components/Graphs/RecentSpending/RecentS
 import RecentSpendingBarChart from '../components/Graphs/RecentSpending/RecentSpendingBarChart';
 import TotalSpending from "../components/Graphs/TotalSpending"
 import { ADD_LIMIT } from '../utils/mutations';
-import { useMutation } from '@apollo/client';
+import { QUERY_TRANSACTIONS } from '../utils/queries';
+import { useQuery, useMutation } from '@apollo/client';
 // import Auth from '../../utils/auth';
 
 
@@ -49,6 +50,22 @@ const MoneyDash = () => {
         }
     }
 
+    const {loading, data} = useQuery(QUERY_TRANSACTIONS, {
+        variables: {
+            month: 1
+        }
+    })
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    console.log("🚀 ~ file: MoneyDash.js:58 ~ MoneyDash ~ loading:", loading)
+    console.log("🚀 ~ file: MoneyDash.js:59 ~ MoneyDash ~ data:", data)
+    const limitAmount = data.transactionByMonth.limit;
+    const dailySpending = data.transactionByMonth.dailySpending;
+    const accumulativeSpending = data.transactionByMonth.accumulativeSpending;
+    const monthlyTotal = data.transactionByMonth.monthlyTotal;
+    
     return (
         <section className="flex flex-row flex-wrap items-center justify-center p-5 bg-gradient-to-t from-lime-600 to-lime-500 sm:bg-gradient-to-r sm:from-lime-400 sm:to-lime-700 sm:flex sm:flex-col sm:items-center sm:overflow-auto touch-auto">
 
@@ -89,7 +106,11 @@ const MoneyDash = () => {
                         </div>
                         <div className="sm:overflow-auto touch-auto sm:touch-pan-down sm:m-10 sm:p-10" id="graph">
 
-                            <DailySpendingLineGraph />
+                            <DailySpendingLineGraph 
+                                limitAmount={limitAmount}
+                                dailySpending={dailySpending}
+                                accumulativeSpending={accumulativeSpending}
+                            />
 
                         </div>
 
@@ -113,7 +134,10 @@ const MoneyDash = () => {
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
-                            <TotalSpending />
+                            <TotalSpending 
+                                limit={limitAmount}
+                                monthlyTotal={monthlyTotal}
+                            />
                         </div>
 
                     </div>

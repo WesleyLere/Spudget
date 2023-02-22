@@ -32,10 +32,22 @@ const typeDefs = gql`
     token: ID
     user: User
   }
+  
+  type DailySpending {
+    date: Int
+    amount: Float
+  }
+
+  type TransactionByMonth {
+    dailySpending: [DailySpending]
+    accumulativeSpending: [DailySpending]
+    monthlyTotal: Float
+    limit: Int
+  }
 
   type Query {
     user: User
-    transactionByMonth(month: Int!): [Transaction]
+    transactionByMonth(month: Int!): TransactionByMonth
   }
 
   type Mutation {

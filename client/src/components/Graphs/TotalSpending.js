@@ -1,22 +1,17 @@
 import React from 'react'
 import Plot from 'react-plotly.js'
 
- const value = TotalSpending.limit
- const limit = 3000
- const steps = []
-
- const greenLimit=.3*limit
- const yellowLimit=.5*limit
- const orangeLimit=.8*limit
-
- const chartSize = Math.max(value, limit)
-
-
-function TotalSpending() {
+function TotalSpending({limit, monthlyTotal}) {
+   
+    const greenLimit=.3*limit
+    const yellowLimit=.5*limit
+    const orangeLimit=.8*limit
+   
+    const chartSize = Math.max(monthlyTotal, limit)
     return (<Plot data={[
         {
             domain: { x: [0, 1], y: [0, 1] },
-            value: value,
+            value: monthlyTotal,
             title: { text: "Spending" },
             type: "indicator",
             mode: "gauge+number",
@@ -27,7 +22,7 @@ function TotalSpending() {
                 { range: [0, greenLimit], color: "green" },
                 { range: [greenLimit, yellowLimit], color: "yellow" },
                 { range: [yellowLimit, orangeLimit], color: "orange" },
-                { range: [orangeLimit, 10000], color: "red" },
+                { range: [orangeLimit, 100000], color: "red" },
 
               ],
               threshold: {

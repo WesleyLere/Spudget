@@ -23,19 +23,49 @@ const resolvers = {
 
     transactionByMonth: async (parent, {month}, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id)
-        const transactions = user.transactions.filter((trasaction) => {
-          return trasaction.month === month
-        })
-        console.log(transactions)
-        // const transactions = await user.transactions.aggregate([
-        //   { $match: { month: month } },
-        //   { $sort: { date: 1 } },
-        // ]);
-
-        return transactions;
+        // Find User
+        const user = await User.findById(context.user._id).populate('limits');
+        // const user = await User.findById(userId).populate("limits");
+        // Save transactions that match "month" into transactions
+        const transactions = user.transactions.filter((transaction) => {
+          return transaction.month === month;
+        });
+        
+        // days in the "month"
+        const monthDays = new Date(user.transactions[0].year, month, 0).getDate();
+        const dailySpending = [];
+        const accumulativeSpending = [];
+        
+        let accumulativeTotal = 0;
+        // Caculate daily spending, accumulative spedning by day, and total spending
+        for (let i = 1; i <= monthDays; i++) {
+          const dailyTransactions = transactions.filter((transaction) => {
+            return transaction.date === i;
+          });
+    
+          const dailyTotal = dailyTransactions.reduce((acc, transaction) => {
+            return acc + transaction.amount;
+          }, 0);
+    
+          accumulativeTotal += dailyTotal;
+    
+          dailySpending.push({ date: i, amount: dailyTotal });
+          accumulativeSpending.push({date: i, amount: accumulativeTotal});
+        }
+        
+        // Sort in ascending order of date
+        dailySpending.sort((a, b) => a.date - b.date);
+    
+        const limit = user.limits[0].amount;
+    
+        return {
+          dailySpending,
+          accumulativeSpending,
+          monthlyTotal: accumulativeTotal,
+          limit
+        };
       }
-
+    
       throw new AuthenticationError('Not logged in');
     }
   },
