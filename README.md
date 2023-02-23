@@ -12,6 +12,28 @@ Spudget is a web app for a user who can sign up and view and adjust their budget
 
 ## Screenshots 📸
 
+Desktop Layout:
+![Alt text](Screenshots/desktop%20layout.png)
+
+
+Mobile Layout:
+![Alt text](Screenshots/mobile%20layout.png)
+
+
+Desktop Login Page:
+![Alt text](Screenshots/desktop%20login.png)
+
+
+Mobile Login Page:
+![Alt text](Screenshots/mobile%20login.png)
+
+Money Dashboard:
+![Alt text](Screenshots/moneyDash.png)
+
+Modal on upload page:
+![Alt text](Screenshots/modal%20on%20upload%20desktop.png)
+
+
 ## Installation 🔧
 
 Run this to install dependencies
