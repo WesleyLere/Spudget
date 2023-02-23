@@ -102,11 +102,11 @@ const MoneyDash = () => {
                         </div>
                         <div className="sm:overflow-auto touch-auto sm:touch-pan-down sm:m-10 sm:p-10" id="graph">
 
-                            {!loading ? (<DailySpendingLineGraph 
+                            {data && (<DailySpendingLineGraph 
                                 limitAmount={data.transactionByMonth.limit}
                                 dailySpending={data.transactionByMonth.dailySpending}
                                 accumulativeSpending={data.transactionByMonth.accumulativeSpending}
-                            />) : null}
+                            />)}
 
                         </div>
 
@@ -130,10 +130,10 @@ const MoneyDash = () => {
                     <div className="xl:bg-slate-300 sm:bg-slate-500 rounded-3xl xl:border-4 xl:border-lime-500 xl:m-8 xl:p-8 sm:m-10 sm:p-10 xl:flex sm:flex sm:flex-col sm:items-center">
                         <h1>Spending Tracker</h1>
                         <div className=''>
-                            {!loading ? (<TotalSpending 
+                            {data && (<TotalSpending 
                                 limit={data.transactionByMonth.limit}
                                 monthlyTotal={data.transactionByMonth.monthlyTotal}
-                            />) : null}
+                            />)}
                         </div>
 
                     </div>

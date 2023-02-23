@@ -26,14 +26,14 @@ const resolvers = {
         // Find User
         const user = await User.findById(context.user._id).populate('limits');
         // const user = await User.findById(userId).populate("limits");
-
-        const limit = user.limits[0].amount;
+        
+        const limit = user.limits.length === 0 ? 0 : user.limits[0].amount;
         // Save transactions that match "month" into transactions
         const transactions = user.transactions.filter((transaction) => {
           return transaction.month === month;
         });
         
-        if (!transactions) {
+        if (transactions.length === 0) {
           return {
             dailySpending: [],
             accumulativeSpending: [],
@@ -66,13 +66,14 @@ const resolvers = {
         
         // Sort in ascending order of date
         dailySpending.sort((a, b) => a.date - b.date);
-    
+
         return {
           dailySpending,
           accumulativeSpending,
           monthlyTotal: accumulativeTotal,
           limit
         };
+      
       }
     
       throw new AuthenticationError('Not logged in');
@@ -113,7 +114,7 @@ const resolvers = {
       return user;
       }
 
-      throw new AuthenticationError('Not logged in');
+      // throw new AuthenticationError('Not logged in');
     },
 
     addLimit: async (parent, { amount}, context) => {
