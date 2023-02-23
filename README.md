@@ -27,6 +27,8 @@ Desktop Login Page:
 Mobile Login Page:
 ![Alt text](Screenshots/mobile%20login.png)
 
+Money Dashboard:
+![Alt text](Screenshots/moneyDash.png)
 
 Modal on upload page:
 ![Alt text](Screenshots/modal%20on%20upload%20desktop.png)
