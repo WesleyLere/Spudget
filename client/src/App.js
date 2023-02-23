@@ -70,16 +70,7 @@ function App() {
         </Routes>
       </Router>
     </ApolloProvider>
-    // <ApolloProvider client={client}>
-    //   <NavTabs
-    //     tab={tab}
-    //     handlePageChange={handlePageChange}
-    //   >
-    //   </NavTabs>
-    //   <main>
-    //     {renderTab()}
-    //   </main>
-    // </ApolloProvider>
+  
   );
 
 }

@@ -40,6 +40,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+
 app.post('/upload', upload.single('file'), function (req, res, next) {
   const mindee = require("mindee");
 
