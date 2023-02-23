@@ -6,12 +6,13 @@ import { useMutation } from '@apollo/client';
 const UploadForm = () => {
 
 
-    const [file, setFile] = useState();
-    const [category, setCategory] = useState();
+    const [file, setFile] = useState('');
+    const [category, setCategory] = useState('none');
     const [date, setDate] = useState('');
     const [supplier, setSupplier] = useState('');
     const [totalAmount, setTotalAmount] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     function handleFile(event) {
         setFile(event.target.files[0])
@@ -26,7 +27,7 @@ const UploadForm = () => {
         } else if (event.target.name === "supplier") {
             setSupplier(event.target.value);
         } else {
-            setTotalAmount(event.target.value)
+            setTotalAmount(parseFloat(event.target.value))
         }
     }
 
@@ -56,6 +57,10 @@ const UploadForm = () => {
     }
 
     const closeModal = () => {
+        setCategory('none');
+        setDate('');
+        setSupplier('');
+        setTotalAmount('');
         setIsOpen(false);
     }
 
@@ -64,10 +69,11 @@ const UploadForm = () => {
     }
 
     const [addTransaction] = useMutation(ADD_TRANSACTION);
-    const importRecipt = async () => {
+    const importReceipt = async () => {
         const newdatearray = date.split('-').map((num) =>parseInt(num) )
         
         console.log(newdatearray)
+        console.log(category, supplier, totalAmount )
         const { data } = await addTransaction({
             variables: {
                 year: newdatearray[0],
@@ -79,20 +85,22 @@ const UploadForm = () => {
             },
         });
 
-
+        if (data) setSuccess(true);
+        
         closeModal()
         setFile('')
     }
 
     return (
-        <section className="xl:flex xl:flex-col xl:flex-wrap xl:items-center justify-center xl:m-5 xl:p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
+        <section className="sm:flex sm:flex-col xl:flex xl:flex-col xl:flex-wrap xl:items-center justify-center xl:m-5 xl:p-5 bg-gradient-to-t from-lime-300 to-lime-500 rounded-2xl">
             <h2 className="flex flex-col flex-wrap items-center justify-center text-slate-100 text-5xl m-5 p-5">Upload your Recipets here!</h2>
             <form id="upload-form">
-                <div className="rounded-3xl text-xl flex flex-col flex-wrap items-center justify-center drop-shadow-2xl bg-green-600 m-10 p-5">
+                <div className=" rounded-3xl text-xl flex flex-col flex-wrap items-center justify-center drop-shadow-2xl bg-green-600 m-10 p-5">
                     <input type="file" name="file" onChange={handleFile} />
                 </div>
+                {success && (<div className='flex-row flex items-center justify-center sm:text-2xl  2xl:text-3xl text-slate-200 drop-shadow-lg'>Spuddy saved your transaction!</div>)}
                 <div className='flex-row flex'>
-                    <button onClick={submitFile} className='text-3xl flex flex-col flex-wrap items-center justify-center xl:m-10 sm:m-5 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
+                    <button onClick={submitFile} className=' text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
                         <input type="button" value="Upload" />
                     </button>
                     <button onClick={openModal} type="button" className='text-3xl flex flex-col flex-wrap items-center justify-center m-10 p-5 bg-amber-400 rounded-full hover:bg-amber-200 hover:drop-shadow-lg hover:scale-[1.04] transition ease-out duration-300'>
@@ -110,7 +118,7 @@ const UploadForm = () => {
             </form>
 
             <Modal
-                importRecipt={importRecipt}
+                importReceipt={importReceipt}
                 isOpen={isOpen}
                 closeModal={closeModal}
                 category={category}

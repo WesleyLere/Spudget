@@ -21,7 +21,8 @@ function DailySpendingLineGraph({limitAmount, dailySpending, accumulativeSpendin
                 mode: 'lines',
                 line: { color: 'red'},
             },
-            {
+            {   
+                x: dayArr,
                 y: accArr,
                 name: 'Acumulative Spending',
                 type: 'scatter',
@@ -31,6 +32,7 @@ function DailySpendingLineGraph({limitAmount, dailySpending, accumulativeSpendin
             {
                 name: 'Daily Spending',
                 type: 'bar',
+                x: dayArr,
                 y: dailyArr,
                 bar: { color: 'blue' }
             }

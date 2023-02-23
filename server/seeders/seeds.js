@@ -40,10 +40,10 @@ db.once('open', async () => {
         console.log(`The user, ${user.username}, has this EMAIL:`, user.email);
         console.log('With this PASSWORD:', password);
         
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 25; i++) {
             const randomDate = casual.integer(1, 31);
             // const randomMonth = casual.integer(1, 2);
-            const randomAmount = Number(casual.double(1, 500).toFixed(2));
+            const randomAmount = Number(casual.double(1, 400).toFixed(2));
             const randomVendor = casual.company_name;
             const randomCategoryIndex = casual.integer(0, 7);
 
@@ -60,7 +60,7 @@ db.once('open', async () => {
         }
 
         const createdLimit = await Limit.create({
-            amount: casual.integer(3000, 4000),
+            amount: casual.integer(5000, 7000),
         })
 
         user.limits.push(createdLimit._id);
