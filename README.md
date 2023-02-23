@@ -4,6 +4,8 @@
 
 Spudget is a web app for a user who can sign up and view and adjust their budgets. The app can help the user keep track of their spendings. The app includes different graphs for the user to easily view their monthly spending. Spuddy, our potato mascot, will help guide you!
 
+
+
 ## User Story 💰
 
 > AS A USER who is struggling with budgeting
@@ -12,26 +14,32 @@ Spudget is a web app for a user who can sign up and view and adjust their budget
 
 ## Screenshots 📸
 
-Desktop Layout:
-![Alt text](Screenshots/desktop%20layout.png)
+Desktop Layout:  
+
+![desktop layout](https://user-images.githubusercontent.com/82792300/220975180-30c28824-fd50-4f6e-823a-138ad5fd0e22.png)
 
 
-Mobile Layout:
-![Alt text](Screenshots/mobile%20layout.png)
+Mobile Layout:  
+
+![mobile layout](https://user-images.githubusercontent.com/82792300/220975190-f7450a48-bddb-4433-bb58-7c852dce625c.png)
 
 
-Desktop Login Page:
-![Alt text](Screenshots/desktop%20login.png)
+Desktop Login Page:  
+
+![desktop login](https://user-images.githubusercontent.com/82792300/220975186-17142aa8-031c-4fc1-9acc-372d00e375f8.png)
 
 
-Mobile Login Page:
-![Alt text](Screenshots/mobile%20login.png)
+Mobile Login Page:  
 
-Money Dashboard:
-![Alt text](Screenshots/moneyDash.png)
+![mobile login](https://user-images.githubusercontent.com/82792300/220975192-f555ff77-8e16-417d-a4e5-4e74513d8baa.png)
 
-Modal on upload page:
-![Alt text](Screenshots/modal%20on%20upload%20desktop.png)
+Money Dashboard:  
+
+![moneyDash](https://user-images.githubusercontent.com/82792300/220975175-3320dfd6-e215-4173-8adf-959d7c870798.png)
+
+Modal on upload page:  
+
+![modal on upload desktop](https://user-images.githubusercontent.com/82792300/220975195-8fa20aa0-35ae-402d-9650-4e4526934c34.png)
 
 
 ## Installation 🔧
