@@ -4,7 +4,7 @@
 
 Spudget is a web app for a user who can sign up and view and adjust their budgets. The app can help the user keep track of their spendings. The app includes different graphs for the user to easily view their monthly spending. Spuddy, our potato mascot, will help guide you!
 
-
+Visit our app [here](https://spudget.herokuapp.com/)
 
 ## User Story 💰
 
