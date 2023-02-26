@@ -2,7 +2,7 @@
 
 ## Description 🗒️
 
-Spudget is a web app for a user who can sign up and view and adjust their budgets. The app can help the user keep track of their spendings. The app includes different graphs for the user to easily view their monthly spending. Spuddy, our potato mascot, will help guide you!
+Spudget is a React app which user can use to visualize their spending. Users can sign up, view and adjust their budgets. The app includes different graphs for users to easily view their monthly spending, and by category. Spuddy, our potato mascot, will help guide you!
 
 Visit our app [here](https://spudget.herokuapp.com/)
 
@@ -48,6 +48,14 @@ Run this to install dependencies
 ```console
 npm i
 ``` 
+Seed the database with
+```console
+npm run seed
+```
+To Start the app locally
+```console
+npm run dev
+```
 
 ## Dependencies 📦
 
@@ -67,6 +75,7 @@ npm i
 * Html, CSS, JS
 * Tailwind
 * Plotly
+* React
 
 ## License 🔑
 
@@ -75,6 +84,6 @@ This project is licensed under the [MIT](LICENSE) license
 ## Contributors 👥
 
 - [Matt Waldron](https://github.com/mrartrager)
-- [RyanTrian](https://github.com/RyanTrian).
+- [RyanTrian](https://github.com/RyanTrian)
 - [Wesley Lere](https://github.com/WesleyLere)
 - [Melissa Vanny Pech](https://github.com/PechMV)
